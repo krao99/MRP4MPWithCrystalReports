@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Package
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  Name="DisplayName"
+  Culture="Culture"
+  LicenseAgreement="license.txt"
+>
+
+  <PackageFiles>
+    <PackageFile Name="license.txt"/>
+  </PackageFiles>
+
+  <!-- Defines a localizable string table for error messages and url's  -->
+  <Strings>
+    <String Name="DisplayName">SAP Crystal Reports Runtime Engine for .NET Framework</String>
+    <String Name="Culture">zh-TW</String>
+    <String Name="WindowsInstallerComponentFailure">Windows Installer 安裝失敗，導致 SAP Crystal Reports Runtime Engine for .NET Framework redistributable 的安裝作業無法繼續進行。</String>
+    <String Name="WindowsInstallerImproperInstall">由於 Windows Installer 安裝不適當，SAP Crystal Reports Runtime Engine for .NET Framework redistributable 的安裝作業無法繼續進行。</String>
+    <String Name="AnotherInstanceRunning">另一個安裝執行個體已經在執行中。</String>
+    <String Name="InvalidPlatformWin9x">不支援在 Windows 95 上安裝 SAP Crystal Reports Runtime Engine for .NET Framework redistributable。 請連絡您的應用程式廠商。</String>
+    <String Name="InvalidPlatformWinNT">不支援在 Windows NT 4.0 上安裝 SAP Crystal Reports Runtime Engine for .NET Framework redistributable。 請連絡您的管理員。</String>
+    <String Name="GeneralFailure">在安裝 SAP Crystal Reports Runtime Engine for .NET Framework 期間發生嚴重錯誤。</String>
+    <String Name="AdminRequired">您沒有安裝這個應用程式時所需的權限。 請連絡您的管理員。</String>
+  </Strings>
+
+</Package>

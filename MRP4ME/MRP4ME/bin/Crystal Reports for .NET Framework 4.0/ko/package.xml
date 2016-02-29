@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Package
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  Name="DisplayName"
+  Culture="Culture"
+  LicenseAgreement="license.txt"
+>
+
+  <PackageFiles>
+    <PackageFile Name="license.txt"/>
+  </PackageFiles>
+
+  <!-- Defines a localizable string table for error messages and url's  -->
+  <Strings>
+    <String Name="DisplayName">SAP Crystal Reports Runtime Engine for .NET Framework</String>
+    <String Name="Culture">ko</String>
+    <String Name="WindowsInstallerComponentFailure">Windows Installer 설치에 실패했습니다. 따라서 SAP Crystal Reports Runtime Engine for .NET Framework redistributable 설치를 계속할 수 없습니다.</String>
+    <String Name="WindowsInstallerImproperInstall">Windows Installer가 잘못 설치되었기 때문에 SAP Crystal Reports Runtime Engine for .NET Framework redistributable 설치를 계속할 수 없습니다.</String>
+    <String Name="AnotherInstanceRunning">다른 설치 인스턴스가 이미 실행 중입니다.</String>
+    <String Name="InvalidPlatformWin9x">SAP Crystal Reports Runtime Engine for .NET Framework redistributable 설치는 Windows 95 에서는 지원되지 않습니다. 응용 프로그램 공급업체에 문의하십시오.</String>
+    <String Name="InvalidPlatformWinNT">SAP Crystal Reports Runtime Engine for .NET Framework redistributable 설치는 Windows NT 4.0 에서는 지원되지 않습니다. 응용 프로그램 공급업체에 문의하십시오.</String>
+    <String Name="GeneralFailure">SAP Crystal Reports Runtime Engine for .NET Framework 설치 중에 심각한 오류가 발생했습니다.</String>
+    <String Name="AdminRequired">이 응용 프로그램 설치에 필요한 권한이 없습니다. 관리자에게 문의하십시오.</String>
+  </Strings>
+
+</Package>

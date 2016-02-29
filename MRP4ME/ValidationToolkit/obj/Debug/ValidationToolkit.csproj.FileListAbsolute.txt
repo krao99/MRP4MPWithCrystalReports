@@ -1,0 +1,5 @@
+C:\kotesh\MRP4ME\MRP4ME\ValidationToolkit\obj\Debug\ValidationToolkit.csprojResolveAssemblyReference.cache
+C:\kotesh\MRP4ME\MRP4ME\ValidationToolkit\bin\Debug\ValidationToolkit.dll
+C:\kotesh\MRP4ME\MRP4ME\ValidationToolkit\bin\Debug\ValidationToolkit.pdb
+C:\kotesh\MRP4ME\MRP4ME\ValidationToolkit\obj\Debug\ValidationToolkit.dll
+C:\kotesh\MRP4ME\MRP4ME\ValidationToolkit\obj\Debug\ValidationToolkit.pdb

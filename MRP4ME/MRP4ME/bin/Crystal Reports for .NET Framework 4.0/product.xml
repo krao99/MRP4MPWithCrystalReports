@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Product
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  ProductCode="SAP.CrystalReports14.NET.2.0"
+>
+  <!-- Defines list of files to be copied on build -->
+  <PackageFiles>
+    <PackageFile Name="CRRuntime_32bit_13_0_16.msi" 
+      HomeSite="http://downloads.businessobjects.com/akdlm/crnetruntime/clickonce/CRRuntime_32bit_13_0_16.msi" 
+      PublicKey="3082010a0282010100a5f02afcbaf295dd82c482b0aa83782a08ea007635afe2e76b57558d6ad708a1c96b86da81894cdbb42214c26674a5c7f233d8bc76c77b3b2cbc8e38033c3c9c26fc5cd0789a462a2a6b2b19ac9321c851a08544dbf42ce697c97b730964c159d533ba56b835b702aa3f30e96cfd76f60a555ebc862828347e468bf126b9eb345a7e488aea3451e9e9eb8412a600d1db811a2c0144697048cd41f100e10ab8225658e1c3b7613a06835e628e2556c0f8bfd1408a0a5fed97892f6b99f49f2f436a0293aa5562fbbd5ee89dc667261e058aa767e168867ceac2081588c1bd800fc2bfcd98773cefd3266f54eb0dc7daf4d5cd1867ea897d39e6a289a4a75eca890203010001"/>
+    <PackageFile Name="CRRuntime_64bit_13_0_16.msi" 
+      HomeSite="http://downloads.businessobjects.com/akdlm/crnetruntime/clickonce/CRRuntime_64bit_13_0_16.msi" 
+      PublicKey="3082010a0282010100a5f02afcbaf295dd82c482b0aa83782a08ea007635afe2e76b57558d6ad708a1c96b86da81894cdbb42214c26674a5c7f233d8bc76c77b3b2cbc8e38033c3c9c26fc5cd0789a462a2a6b2b19ac9321c851a08544dbf42ce697c97b730964c159d533ba56b835b702aa3f30e96cfd76f60a555ebc862828347e468bf126b9eb345a7e488aea3451e9e9eb8412a600d1db811a2c0144697048cd41f100e10ab8225658e1c3b7613a06835e628e2556c0f8bfd1408a0a5fed97892f6b99f49f2f436a0293aa5562fbbd5ee89dc667261e058aa767e168867ceac2081588c1bd800fc2bfcd98773cefd3266f54eb0dc7daf4d5cd1867ea897d39e6a289a4a75eca890203010001"/>
+  </PackageFiles>
+
+  <RelatedProducts>
+    <DependsOnProduct Code="Microsoft.Net.Framework.2.0" />
+    <DependsOnProduct Code="Microsoft.Data.Access.Components.2.8" />
+  </RelatedProducts>
+
+  <InstallChecks>
+    <RegistryCheck Property="CRRuntime32Version" Key="HKLM\SOFTWARE\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Crystal Reports" Value="CRRuntime32Version" /> 
+    <RegistryCheck Property="CRRuntime64Version" Key="HKLM\SOFTWARE\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Crystal Reports" Value="CRRuntime64Version" /> 
+  </InstallChecks>
+
+  <Commands Reboot="Defer">
+    <Command PackageFile="CRRuntime_32bit_13_0_16.msi"
+	     Arguments='' 
+	     EstimatedInstalledBytes="80000000" 
+	     EstimatedInstallSeconds="240">
+
+      <!-- These checks determine whether the package is to be installed -->
+
+      <InstallConditions>
+        <!-- Comment out the below BypassIf entry if you want install the 32bit version CRRuntime redist in the target machine -->      
+        <!-- ByPass if the Processor is not x86 -->
+        <BypassIf Property="ProcessorArchitecture" Compare="ValueNotEqualTo" Value="Intel"/>
+
+        <!-- ByPass if the installed version is same or higher --> 
+        <BypassIf Property="CRRuntime32Version" Compare="VersionGreaterThanOrEqualTo"  Value="13.0.16"/>
+        
+        <!-- Block install if user does not have admin privileges -->
+        <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>
+
+        <!-- Block install on Win95 -->
+        <FailIf Property="Version9x" Compare="VersionLessThan" Value="4.10" String="InvalidPlatformWin9x"/>
+
+        <!-- Block install on NT 4 or less -->
+        <FailIf Property="VersionNT" Compare="VersionLessThan" Value="5.00" String="InvalidPlatformWinNT"/>
+
+      </InstallConditions>
+
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success"/>
+        <ExitCode Value="1641" Result="SuccessReboot"/>
+        <ExitCode Value="3010" Result="SuccessReboot"/>
+        <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure" />
+      </ExitCodes>
+
+    </Command>
+    
+    <Command PackageFile="CRRuntime_64bit_13_0_16.msi"
+	     Arguments=''
+	     EstimatedInstalledBytes="87000000"
+	     EstimatedInstallSeconds="300">
+
+      <!-- These checks determine whether the package is to be installed -->
+
+      <InstallConditions>
+        <!-- ByPass if the Processor is not x64 -->
+        <BypassIf Property="ProcessorArchitecture" Compare="ValueNotEqualTo" Value="AMD64"/>
+        
+        <!-- Uncomment the below BypassIf entry if you do not want to install the 64bit version CRRuntime redist in the target machine -->      
+        <!--
+        <BypassIf Property="ProcessorArchitecture" Compare="ValueEqualTo" Value="AMD64"/>
+        -->
+         
+        <!-- ByPass if the installed version is same or higher --> 
+        <BypassIf Property="CRRuntime64Version" Compare="VersionGreaterThanOrEqualTo"  Value="13.0.16"/>
+
+        <!-- Block install if user does not have admin privileges -->
+        <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>
+
+        <!-- Block install on Win95 -->
+        <FailIf Property="Version9x" Compare="VersionLessThan" Value="4.10" String="InvalidPlatformWin9x"/>
+
+        <!-- Block install on NT 4 or less -->
+        <FailIf Property="VersionNT" Compare="VersionLessThan" Value="5.00" String="InvalidPlatformWinNT"/>
+
+      </InstallConditions>
+
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success"/>
+        <ExitCode Value="1641" Result="SuccessReboot"/>
+        <ExitCode Value="3010" Result="SuccessReboot"/>
+        <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure" />
+      </ExitCodes>
+    </Command>
+  </Commands>
+</Product>

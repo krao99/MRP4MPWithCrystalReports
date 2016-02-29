@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MRP4MEModelStoreContainer" CdmEntityContainer="MRP4MEEntities">
+    <EntitySetMapping Name="sales_order">
+      <EntityTypeMapping TypeName="MRP4MEModel.sales_order">
+        <MappingFragment StoreEntitySet="sales_order">
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="upload_image" ColumnName="upload_image" />
+          <ScalarProperty Name="attachment" ColumnName="attachment" />
+          <ScalarProperty Name="back_ordered" ColumnName="back_ordered" />
+          <ScalarProperty Name="quantity_received" ColumnName="quantity_received" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="unit_cost" ColumnName="unit_cost" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="item_code" ColumnName="item_code" />
+          <ScalarProperty Name="so_number" ColumnName="so_number" />
+          <ScalarProperty Name="required_date" ColumnName="required_date" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

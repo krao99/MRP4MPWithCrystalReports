@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Package
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  Name="DisplayName"
+  Culture="Culture"
+  LicenseAgreement="license.txt"
+>
+
+  <PackageFiles>
+    <PackageFile Name="license.txt"/>
+  </PackageFiles>
+
+  <!-- Defines a localizable string table for error messages and url's  -->
+  <Strings>
+    <String Name="DisplayName">SAP Crystal Reports Runtime Engine for .NET Framework</String>
+    <String Name="Culture">it</String>
+    <String Name="WindowsInstallerComponentFailure">Windows Installer è terminato in errore, quindi è impossibile proseguire l'installazione di SAP Crystal Reports Runtime Engine for .NET Framework redistributable.</String>
+    <String Name="WindowsInstallerImproperInstall">A causa dell'esecuzione non corretta di Windows Installer, è impossibile proseguire l'installazione di SAP Crystal Reports Runtime Engine for .NET Framework redistributable.</String>
+    <String Name="AnotherInstanceRunning">È già in esecuzione un'altra istanza del programma di installazione.</String>
+    <String Name="InvalidPlatformWin9x">L'installazione di SAP Crystal Reports Runtime Engine for .NET Framework redistributable non è supportata in Windows 95. Contattare il fornitore dell'applicazione.</String>
+    <String Name="InvalidPlatformWinNT">L'installazione di SAP Crystal Reports Runtime Engine for .NET Framework redistributable non è supportata in Windows NT 4.0. Contattare il fornitore dell'applicazione.</String>
+    <String Name="GeneralFailure">Si è verificato un errore irreversibile durante l'installazione di SAP Crystal Reports Runtime Engine for .NET Framework.</String>
+    <String Name="AdminRequired">L'utente non dispone delle autorizzazioni necessarie per installare questa applicazione. Contattare l'amministratore.</String>
+  </Strings>
+
+</Package>
