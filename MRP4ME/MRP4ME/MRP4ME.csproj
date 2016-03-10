@@ -197,7 +197,7 @@
     <Compile Include="UIElementsLib\Ivalueconverter.cs" />
     <Compile Include="UIElementsLib\TabItemBackgroundColourConverter.cs" />
     <Compile Include="ValidationHelpers\SalesOrderHelper.cs" />
-    <Compile Include="ViewModel\BOMViewModel.cs" />
+    <Compile Include="ViewModel\BOMDashBoardViewModel.cs" />
     <Compile Include="ViewModel\Controller.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MaterialRequirementViewModel.cs" />
