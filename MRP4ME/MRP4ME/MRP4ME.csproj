@@ -103,7 +103,7 @@
     </Reference>
     <Reference Include="MySql.Data, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.8.7\Assemblies\v4.0\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL for Visual Studio 1.1.1\Assemblies\v4.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity.EF6, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -200,12 +200,16 @@
     <Compile Include="ViewModel\BOMViewModel.cs" />
     <Compile Include="ViewModel\Controller.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\MaterialRequirementViewModel.cs" />
     <Compile Include="ViewModel\ValidatableModel.cs" />
-    <Compile Include="View\BOMView.xaml.cs">
-      <DependentUpon>BOMView.xaml</DependentUpon>
+    <Compile Include="View\BOMDashBoardView.xaml.cs">
+      <DependentUpon>BOMDashBoardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialRequirement.xaml.cs">
+      <DependentUpon>MaterialRequirement.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SalesOrderView.xaml.cs">
       <DependentUpon>SalesOrderView.xaml</DependentUpon>
@@ -298,11 +302,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BOMView.xaml">
+    <Page Include="View\BOMDashBoardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialRequirement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

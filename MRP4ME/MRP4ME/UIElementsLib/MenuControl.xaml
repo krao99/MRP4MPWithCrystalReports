@@ -28,7 +28,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -40,7 +40,7 @@
                 </StackPanel.Triggers>
                 
             </StackPanel>
-            <StackPanel Name="panelPO" Height="26">
+            <StackPanel Name="panelSO" Height="26">
                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                        Content="SALES ORDER" Foreground="#FFE2A023" FontWeight="Bold" Height="24" 
                        >
@@ -55,10 +55,7 @@
                     <Button x:Name="btnSalesOrder" HorizontalContentAlignment="Center" HorizontalAlignment="Left" 
                             Height="24" VerticalAlignment="Top" Width="163" Content="Sales Order"
                             Background="#FFE2A023" Margin="2,2,0,1" Command="{Binding Path=DisplayName}" />
-                    <Button x:Name="btnCreateChildCompnent" HorizontalContentAlignment="Center" 
-                            HorizontalAlignment="Left" Content="Child Component"
-                            Height="24" VerticalAlignment="Top" Width="163" 
-                            Background="#FFE2A023" Margin="2,2,0,0"/>
+                    
                 </StackPanel>
 
                 <StackPanel.Triggers>
@@ -66,7 +63,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="90" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="90" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -97,7 +94,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -128,7 +125,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -159,7 +156,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -190,7 +187,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -221,7 +218,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />

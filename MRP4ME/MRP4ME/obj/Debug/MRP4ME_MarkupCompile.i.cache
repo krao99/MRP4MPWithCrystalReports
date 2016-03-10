@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\App.xaml
-8-1790048255
+9-1336605628
 
-40414072771
-281950978388
-MainWindow.xaml;MainWindowResources.xaml;Reports\ReportViewerUI.xaml;Resources\Button.xaml;UIElementsLib\MenuControl.xaml;View\BOMView.xaml;View\HomeView.xaml;View\SalesOrderView.xaml;
+42-123376100
+28-877942316
+MainWindow.xaml;MainWindowResources.xaml;Reports\ReportViewerUI.xaml;Resources\Button.xaml;UIElementsLib\MenuControl.xaml;View\BOMDashBoardView.xaml;View\HomeView.xaml;View\MaterialRequirement.xaml;View\SalesOrderView.xaml;
 
 False
 

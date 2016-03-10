@@ -24,6 +24,8 @@ namespace MRP4ME.ViewModel
         public ICommand SalesOrderCommand { get; set; }
         public ICommand EditSOCommand { get; set; }
         public ICommand BOMCommand { get; set; }
+        public ICommand NewBOMCommand { get; set; }
+        public ICommand LocateBOMCommand { get; set; }
         public ICommand PrintBOMCommand { get; set; }
         
         ReadOnlyCollection<CommandViewModel> _commands;
@@ -45,15 +47,26 @@ namespace MRP4ME.ViewModel
             this.EditSOCommand = new RelayCommand(param => this.EditSalesOrder((string)param));
 
             #endregion Sales order commands
-
+/*
             #region  BOM commands
             
-            this.BOMCommand = new RelayCommand(param => this.ShowBOMView());
+            this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
             this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
 
             #endregion BOM commands
+            */
 
+            #region  BOM commands
+
+            // this.BOMCommand = new RelayCommand(param => this.ShowMaterialRequirementView());
+            this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
+            //this.NewBOMCommand = new RelayCommand(param => this.CreateNewBOM());
+            //this.LocateBOMCommand = new RelayCommand(param => this.LocateBOM());
             
+            this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
+
+            #endregion MaterialRequirement commands
+
 
 
             //_salesorder = new sales_order();
@@ -206,19 +219,39 @@ namespace MRP4ME.ViewModel
         }
 
 
-        void ShowBOMView()
+        void ShowBOMDashBoard()
         {
             bool BOMWorkspaceExist = false;
             //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
 
-            BOMViewModel workspace = new BOMViewModel();
+            BOMDashBoardViewModel workspace = new BOMDashBoardViewModel();
             if (this.Workspaces.Count > 0)
             {
-                BOMWorkspaceExist = workSpaceExist(Workspaces, "BOMViewModel");
+                BOMWorkspaceExist = workSpaceExist(Workspaces, "BOMDashBoardViewModel");
             }
 
             //if this work space is not exist
             if (!BOMWorkspaceExist)
+            {
+                this.Workspaces.Add(workspace);
+                this.SetActiveWorkspace(workspace);
+            }
+        }
+
+        void CreateNewBOM()
+        {
+            bool NewBOMWorkspaceExist = false;
+            //SalesOrderViewModel Constructor takes SOnumber as param
+            //empty string for new sales order
+
+            SalesOrderViewModel workspace = new SalesOrderViewModel("");
+            if (this.Workspaces.Count > 0)
+            {
+                NewBOMWorkspaceExist = workSpaceExist(Workspaces, "BOMViewModel");
+            }
+
+            //if this work space is not exist
+            if (!NewBOMWorkspaceExist)
             {
                 this.Workspaces.Add(workspace);
                 this.SetActiveWorkspace(workspace);
@@ -244,6 +277,25 @@ namespace MRP4ME.ViewModel
                 ReportUtility.Display_report(soReport, salesOrdersList, repWindow);
             }
 
+        }
+
+        void ShowMaterialRequirementView()
+        {
+            bool MaterialRequirementWorkspaceExist = false;
+            //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
+
+            MaterialRequirementViewModel workspace = new MaterialRequirementViewModel();
+            if (this.Workspaces.Count > 0)
+            {
+                MaterialRequirementWorkspaceExist = workSpaceExist(Workspaces, "MaterialRequirementViewModel");
+            }
+
+            //if this work space is not exist
+            if (!MaterialRequirementWorkspaceExist)
+            {
+                this.Workspaces.Add(workspace);
+                this.SetActiveWorkspace(workspace);
+            }
         }
 
 

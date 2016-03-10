@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MRP4ME.View.BOMView"
+﻿<UserControl x:Class="MRP4ME.View.BOMDashBoardView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -98,12 +98,12 @@
     </UserControl.Resources>
     <StackPanel Background="Transparent">
         <StackPanel Background="Transparent" Orientation="Horizontal">
-            <Label Content="Material Requirements" HorizontalAlignment="Left" Height="30" Width="352" FontWeight="Bold"/>
+            <Label Content="BOM Dashboard" HorizontalAlignment="Left" Height="30" Width="352" FontWeight="Bold"/>
 
         </StackPanel>
 
         <Grid Margin="0,0,0,30" Background="#FFE2FEE2" >
-            <StackPanel Background="Transparent">
+            <StackPanel x:Name="stpOuter" Background="Transparent">
                 <DataGrid x:Name="dgBOM" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
                       ItemsSource="{Binding Salesorders}" Background="Transparent" 
                       HorizontalGridLinesBrush="#FF0F9D58" VerticalGridLinesBrush="#FF0F9D58" Margin="0,0,0,11" 

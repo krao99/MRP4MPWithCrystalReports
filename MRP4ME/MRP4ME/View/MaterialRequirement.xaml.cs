@@ -1,5 +1,9 @@
-﻿using System;
+﻿using MRP4ME.Data;
+using MRP4ME.ViewModel;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,18 +20,14 @@ using System.Windows.Shapes;
 namespace MRP4ME.View
 {
     /// <summary>
-    /// Interaction logic for BOM.xaml
+    /// Interaction logic for MaterialRequirement.xaml
     /// </summary>
-    public partial class BOMView : UserControl
+    public partial class MaterialRequirement : UserControl
     {
-        public BOMView()
+        public MaterialRequirement()
         {
             InitializeComponent();
-        }
-
-        private void dgBOM_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            
         }
     }
 }

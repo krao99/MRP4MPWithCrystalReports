@@ -46,7 +46,7 @@
             Content="{Binding Path=Workspaces}"
             ContentTemplate="{StaticResource WorkspacesTemplate}"
             Header="MRP4ME"
-            Style="{StaticResource MainHCCStyle}" FontFamily="Trebuchet MS"
+            Style="{StaticResource MainHCCStyle}" FontFamily="Trebuchet MS" Margin="0,0,-1,0"
             />
       </Border>
     </Grid>

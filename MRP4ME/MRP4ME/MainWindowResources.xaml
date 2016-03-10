@@ -32,10 +32,18 @@ This resource dictionary is used by the MainWindow.
 
     <!-- 
   This template applies an BOM view  to an instance 
-  of the HomeViewModel class shown in the main window.
+  of the BOMDashBoardViewModel class shown in the main window.
   -->
-    <DataTemplate DataType="{x:Type vm:BOMViewModel}">
-        <vw:BOMView />
+    <DataTemplate DataType="{x:Type vm:BOMDashBoardViewModel}">
+        <vw:BOMDashBoardView />
+    </DataTemplate>
+
+    <!--
+    This template applies an Material Requirement view  to an instance 
+  of the MaterialRequirementViewModel class shown in the main window.
+  -->
+    <DataTemplate DataType="{x:Type vm:MaterialRequirementViewModel}">
+        <vw:MaterialRequirement />
     </DataTemplate>
 
     <!-- 
@@ -124,17 +132,12 @@ This resource dictionary is used by the MainWindow.
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <ContentPresenter 
-              DockPanel.Dock="Top"
-              ContentSource="Header" 
-              ContentTemplate="{TemplateBinding HeaderTemplate}" 
-                Grid.Row="0"
-              />
-                        <ContentPresenter 
-              ContentSource="Content" 
-              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                            Grid.Row="1"
-              />
+                        <ContentPresenter DockPanel.Dock="Top" ContentSource="Header"  
+                                          ContentTemplate="{TemplateBinding HeaderTemplate}" Grid.Row="0"
+                            />
+                        <ContentPresenter ContentSource="Content" 
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Row="1"
+                            />
                     </Grid>
                 </ControlTemplate>
                 
@@ -166,7 +169,7 @@ This resource dictionary is used by the MainWindow.
                         <StackPanel >
                             <StackPanel Name="panelHome" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Welcome" 
-                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
+                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
                                     <Label.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FF0F9D58" Offset="0.01"/>
@@ -185,7 +188,7 @@ This resource dictionary is used by the MainWindow.
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -196,7 +199,7 @@ This resource dictionary is used by the MainWindow.
                                     </EventTrigger>
                                 </StackPanel.Triggers>
                             </StackPanel>
-                            <StackPanel Name="panelPO" Height="26">
+                            <StackPanel Name="panelSO" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
                                     Content="Sales Order" Foreground="#FFE2A023" FontWeight="Bold" Height="24" 
                                     >
@@ -209,13 +212,10 @@ This resource dictionary is used by the MainWindow.
                                 </Label>
                                 <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type HeaderedContentControl}}, Path=DataContext}">
                                     <Button x:Name="btnSalesOrder" HorizontalContentAlignment="Center" HorizontalAlignment="Center" 
-                            Height="24" VerticalAlignment="Top" Width="180" Content="Sales Order"
+                                            Height="24" VerticalAlignment="Top" Width="180" Content="Sales Order"
                                             Command="{Binding SalesOrderCommand}"
-                            Background="#FFE2A023" Margin="2,2,0,1"  />
-                                    <Button x:Name="btnCreateChildCompnent" HorizontalContentAlignment="Center" 
-                            HorizontalAlignment="Center" Content="Child Component"
-                            Height="24" VerticalAlignment="Top" Width="180" 
-                            Background="#FFE2A023" Margin="2,2,0,0"/>
+                                            Background="#FFE2A023" Margin="2,2,0,1"  />
+                                    
                                 </StackPanel>
 
                                 <StackPanel.Triggers>
@@ -223,7 +223,7 @@ This resource dictionary is used by the MainWindow.
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="90" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -235,8 +235,8 @@ This resource dictionary is used by the MainWindow.
                                 </StackPanel.Triggers>
                             </StackPanel>
                             <StackPanel Name="panelBOM" Height="26">
-                                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Material Requirements" 
-                       Foreground="#FFE2A023" FontWeight="Bold" Height="24">
+                                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Bill of Materials" 
+                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
                                     <Label.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FF0F9D58" Offset="0.01"/>
@@ -245,17 +245,23 @@ This resource dictionary is used by the MainWindow.
                                     </Label.Background>
                                 </Label>
                                 <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type HeaderedContentControl}}, Path=DataContext}">
-                                    <Button x:Name="btnBOM" Content="Material Requirements" HorizontalAlignment="Center" 
-                        Height="24" VerticalAlignment="Top" Width="180" Command="{Binding BOMCommand}"
-                         Background="#FFE2A023" Margin="2,2,0,0"/>
+                                    <Button x:Name="btnBOM" Content="Bill of Materials" HorizontalAlignment="Center" 
+                                            Height="24" VerticalAlignment="Top" Width="180" Command="{Binding BOMCommand}"
+                                            Background="#FFE2A023" Margin="2,2,0,0"/>
+                                    <Button x:Name="btnNewBOM" Content="Create New BOM" HorizontalAlignment="Center" 
+                                            Height="24" VerticalAlignment="Top" Width="180" Command="{Binding NewBOMCommand}"
+                                            Background="#FFE2A023" Margin="2,2,0,0"/>
+                                    <Button x:Name="btnLocateBOM" Content="Locate BOM" HorizontalAlignment="Center" 
+                                            Height="24" VerticalAlignment="Top" Width="180" Command="{Binding LocateBOMCommand}"
+                                            Background="#FFE2A023" Margin="2,2,0,0"/>
                                 </StackPanel>
                                 <StackPanel.Triggers>
                                     <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp">
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="120" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -267,7 +273,7 @@ This resource dictionary is used by the MainWindow.
                             </StackPanel>
                             <StackPanel Name="panelProdSchedule" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Production Schedule" 
-                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
+                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
                                     <Label.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FF0F9D58" Offset="0.01"/>
@@ -277,15 +283,15 @@ This resource dictionary is used by the MainWindow.
                                 </Label>
                                 <StackPanel>
                                     <Button x:Name="btnProdSchedule" Content="Production Schedule" HorizontalAlignment="Center" 
-                        Height="24" VerticalAlignment="Top" Width="180" 
-                         Background="#FFE2A023" Margin="2,3,0,0"/>
+                                            Height="24" VerticalAlignment="Top" Width="180" 
+                                            Background="#FFE2A023" Margin="2,3,0,0"/>
                                 </StackPanel>
                                 <StackPanel.Triggers>
                                     <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp">
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -298,7 +304,7 @@ This resource dictionary is used by the MainWindow.
                             </StackPanel>
                             <StackPanel Name="panelSpecifications" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Specifications" 
-                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
+                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
                                     <Label.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FF0F9D58" Offset="0.01"/>
@@ -308,15 +314,15 @@ This resource dictionary is used by the MainWindow.
                                 </Label>
                                 <StackPanel>
                                     <Button x:Name="btnSpecifications" Content="Specifications" HorizontalAlignment="Center" 
-                        Height="24" VerticalAlignment="Top" Width="180" 
-                         Background="#FFE2A023" Margin="2,2,0,0"/>
+                                            Height="24" VerticalAlignment="Top" Width="180" 
+                                            Background="#FFE2A023" Margin="2,2,0,0"/>
                                 </StackPanel>
                                 <StackPanel.Triggers>
                                     <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp">
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -329,7 +335,7 @@ This resource dictionary is used by the MainWindow.
                             </StackPanel>
                             <StackPanel Name="panelInventory" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Inventory Availability" 
-                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
+                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
                                     <Label.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FF0F9D58" Offset="0.01"/>
@@ -339,15 +345,15 @@ This resource dictionary is used by the MainWindow.
                                 </Label>
                                 <StackPanel>
                                     <Button x:Name="btnInventory" Content="Inventory Avaliability" HorizontalAlignment="Center" 
-                        Height="24" VerticalAlignment="Top" Width="180" 
-                         Background="#FFE2A023" Margin="2,2,0,0"/>
+                                            Height="24" VerticalAlignment="Top" Width="180" 
+                                            Background="#FFE2A023" Margin="2,2,0,0"/>
                                 </StackPanel>
                                 <StackPanel.Triggers>
                                     <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp">
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -360,7 +366,7 @@ This resource dictionary is used by the MainWindow.
                             </StackPanel>
                             <StackPanel Name="panelReports" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Reports" 
-                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
+                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
                                     <Label.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#FF0F9D58" Offset="0.01"/>
@@ -370,15 +376,15 @@ This resource dictionary is used by the MainWindow.
                                 </Label>
                                 <StackPanel>
                                     <Button x:Name="btnReports" Content="Reports" HorizontalAlignment="Center" 
-                        Height="24" VerticalAlignment="Top" Width="180" 
-                         Background="#FFE2A023" Margin="2,2,0,0"/>
+                                            Height="24" VerticalAlignment="Top" Width="180" 
+                                            Background="#FFE2A023" Margin="2,2,0,0"/>
                                 </StackPanel>
                                 <StackPanel.Triggers>
                                     <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp">
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelPO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -434,10 +440,8 @@ This resource dictionary is used by the MainWindow.
   -->
   <DataTemplate x:Key="WorkspacesTemplate">
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <TabControl 
-      IsSynchronizedWithCurrentItem="True" 
-      ItemsSource="{Binding}" 
-      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+            <TabControl IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" 
+                    ItemTemplate="{StaticResource ClosableTabItemTemplate}"
       Margin="4" Background="#FFE2FEE2" BorderThickness="0"
 
       />

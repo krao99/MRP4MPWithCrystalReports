@@ -20,16 +20,16 @@ using System.Data.Entity;
 
 namespace MRP4ME.ViewModel
 {
-    public class BOMViewModel : WorkspaceViewModel
+    public class BOMDashBoardViewModel : WorkspaceViewModel
     {
         sales_order _sales_order = new sales_order();
         RelayCommand _deleteSOCommand;
         private ObservableCollection<sales_order> _salesorders;
 
-        private static BOMViewModel _instance = new BOMViewModel();
-        public static BOMViewModel Instance { get { return _instance; } }
+        private static BOMDashBoardViewModel _instance = new BOMDashBoardViewModel();
+        public static BOMDashBoardViewModel Instance { get { return _instance; } }
 
-        public BOMViewModel()
+        public BOMDashBoardViewModel()
         {
             
         }
