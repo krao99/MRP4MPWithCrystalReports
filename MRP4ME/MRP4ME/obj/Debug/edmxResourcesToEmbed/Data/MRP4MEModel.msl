@@ -22,5 +22,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="bom_table">
+      <EntityTypeMapping TypeName="MRP4MEModel.bom_table">
+        <MappingFragment StoreEntitySet="bom_table">
+          <ScalarProperty Name="parent_bom_id" ColumnName="parent_bom_id" />
+          <ScalarProperty Name="bom_id" ColumnName="bom_id" />
+          <ScalarProperty Name="engineering_change_order" ColumnName="engineering_change_order" />
+          <ScalarProperty Name="item_number" ColumnName="item_number" />
+          <ScalarProperty Name="item_code" ColumnName="item_code" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="extended_cost" ColumnName="extended_cost" />
+          <ScalarProperty Name="scrap_cost" ColumnName="scrap_cost" />
+          <ScalarProperty Name="scrap_percent" ColumnName="scrap_percent" />
+          <ScalarProperty Name="bom_cost" ColumnName="bom_cost" />
+          <ScalarProperty Name="cost_of_unit_of_measure" ColumnName="cost_of_unit_of_measure" />
+          <ScalarProperty Name="effective__through" ColumnName="effective _through" />
+          <ScalarProperty Name="effective_from" ColumnName="effective_from" />
+          <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
+          <ScalarProperty Name="quantity_per" ColumnName="quantity_per" />
+          <ScalarProperty Name="component_description" ColumnName="component_description" />
+          <ScalarProperty Name="component" ColumnName="component" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

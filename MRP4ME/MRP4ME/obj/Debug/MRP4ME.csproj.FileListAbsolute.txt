@@ -183,7 +183,7 @@ C:\kotesh\MRP4ME\MRP4ME\MRP4ME\bin\Debug\EntityFramework.SqlServer.dll
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\bin\Debug\EntityFramework.SqlServer.xml
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\bin\Debug\MySql.Data.dll
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\bin\Debug\MySql.Data.Entity.EF6.dll
-C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\MaterialRequirement.baml
-C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\MaterialRequirement.g.cs
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\BOMDashBoardView.baml
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\BOMDashBoardView.g.cs
+C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\BOMView.g.cs
+C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\BOMView.baml

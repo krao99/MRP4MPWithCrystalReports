@@ -47,25 +47,14 @@ namespace MRP4ME.ViewModel
             this.EditSOCommand = new RelayCommand(param => this.EditSalesOrder((string)param));
 
             #endregion Sales order commands
-/*
+
             #region  BOM commands
-            
+
             this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
+            this.NewBOMCommand = new RelayCommand(param => this.CreateNewBOM());
             this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
 
             #endregion BOM commands
-            */
-
-            #region  BOM commands
-
-            // this.BOMCommand = new RelayCommand(param => this.ShowMaterialRequirementView());
-            this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
-            //this.NewBOMCommand = new RelayCommand(param => this.CreateNewBOM());
-            //this.LocateBOMCommand = new RelayCommand(param => this.LocateBOM());
-            
-            this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
-
-            #endregion MaterialRequirement commands
 
 
 
@@ -244,7 +233,7 @@ namespace MRP4ME.ViewModel
             //SalesOrderViewModel Constructor takes SOnumber as param
             //empty string for new sales order
 
-            SalesOrderViewModel workspace = new SalesOrderViewModel("");
+            BOMViewModel workspace = new BOMViewModel(0);
             if (this.Workspaces.Count > 0)
             {
                 NewBOMWorkspaceExist = workSpaceExist(Workspaces, "BOMViewModel");
@@ -278,26 +267,6 @@ namespace MRP4ME.ViewModel
             }
 
         }
-
-        void ShowMaterialRequirementView()
-        {
-            bool MaterialRequirementWorkspaceExist = false;
-            //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
-
-            MaterialRequirementViewModel workspace = new MaterialRequirementViewModel();
-            if (this.Workspaces.Count > 0)
-            {
-                MaterialRequirementWorkspaceExist = workSpaceExist(Workspaces, "MaterialRequirementViewModel");
-            }
-
-            //if this work space is not exist
-            if (!MaterialRequirementWorkspaceExist)
-            {
-                this.Workspaces.Add(workspace);
-                this.SetActiveWorkspace(workspace);
-            }
-        }
-
 
         void SetActiveWorkspace(WorkspaceViewModel workspace)
         {

@@ -36,6 +36,7 @@ namespace MRP4ME.Model
 
 
         private ReportsModel repModel = new ReportsModel();
+
         public List<SalesOrder> GetAllSalesOrders()
         {
             return repModel.GetAllSalesOrders();

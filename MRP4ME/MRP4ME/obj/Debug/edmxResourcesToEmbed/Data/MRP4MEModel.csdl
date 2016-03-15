@@ -2,6 +2,7 @@
 <Schema Namespace="MRP4MEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="MRP4MEEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="sales_order" EntityType="MRP4MEModel.sales_order" />
+    <EntitySet Name="bom_table" EntityType="MRP4MEModel.bom_table" />
   </EntityContainer>
   <EntityType Name="sales_order">
     <Key>
@@ -22,5 +23,28 @@
     <Property Name="upload_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="user" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
     <Property Name="level" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bom_table">
+    <Key>
+      <PropertyRef Name="bom_id" />
+    </Key>
+    <Property Name="type" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="component" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="component_description" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="quantity_per" Type="Single" Nullable="false" />
+    <Property Name="unit_of_measure" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="effective_from" Type="DateTime" Nullable="false" />
+    <Property Name="effective__through" Type="DateTime" Nullable="false" />
+    <Property Name="cost_of_unit_of_measure" Type="Decimal" Nullable="false" />
+    <Property Name="bom_cost" Type="Decimal" Nullable="false" />
+    <Property Name="scrap_percent" Type="Decimal" Nullable="false" />
+    <Property Name="scrap_cost" Type="Decimal" Nullable="false" />
+    <Property Name="extended_cost" Type="Decimal" Nullable="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+    <Property Name="item_code" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="item_number" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="engineering_change_order" Type="Boolean" Nullable="false" />
+    <Property Name="bom_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_bom_id" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

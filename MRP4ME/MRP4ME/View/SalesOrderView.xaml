@@ -173,7 +173,7 @@
 
         <Button x:Name="btnSaveSO" Content="Save"  HorizontalAlignment="Left" Height="30"  Grid.Row="16" Grid.Column="1"
     			VerticalAlignment="Top" Width="100" Background="#FFE2A023" 
-                Command="{Binding Path=SavePOCommand}" Margin="240,0,0,0" FontWeight="Bold"
+                Command="{Binding Path=SaveSOCommand}" Margin="240,0,0,0" FontWeight="Bold"
                 />
 
         <Button x:Name="btnCancelSO" Content="Cancel"  HorizontalAlignment="Left" Height="30"  Grid.Row="16" Grid.Column="1"

@@ -26,5 +26,6 @@ namespace MRP4ME.Data
         }
     
         public virtual DbSet<sales_order> sales_order { get; set; }
+        public virtual DbSet<bom_table> bom_table { get; set; }
     }
 }

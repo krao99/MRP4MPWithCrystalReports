@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9637381f5b8b4b83bebd4b4223f9beb8" Name="Diagram1">
         <EntityTypeShape EntityType="MRP4MEModel.sales_order" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MRP4MEModel.bom_table" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

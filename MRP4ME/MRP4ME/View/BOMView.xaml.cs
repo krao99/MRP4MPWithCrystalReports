@@ -1,9 +1,5 @@
-﻿using MRP4ME.Data;
-using MRP4ME.ViewModel;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,14 +16,13 @@ using System.Windows.Shapes;
 namespace MRP4ME.View
 {
     /// <summary>
-    /// Interaction logic for MaterialRequirement.xaml
+    /// Interaction logic for BOMView.xaml
     /// </summary>
-    public partial class MaterialRequirement : UserControl
+    public partial class BOMView : UserControl
     {
-        public MaterialRequirement()
+        public BOMView()
         {
             InitializeComponent();
-            
         }
     }
 }

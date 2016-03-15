@@ -38,12 +38,12 @@ This resource dictionary is used by the MainWindow.
         <vw:BOMDashBoardView />
     </DataTemplate>
 
-    <!--
-    This template applies an Material Requirement view  to an instance 
-  of the MaterialRequirementViewModel class shown in the main window.
+    <!-- 
+  This template applies an BOM view  to an instance 
+  of the BOMDashBoardViewModel class shown in the main window.
   -->
-    <DataTemplate DataType="{x:Type vm:MaterialRequirementViewModel}">
-        <vw:MaterialRequirement />
+    <DataTemplate DataType="{x:Type vm:BOMViewModel}">
+        <vw:BOMView />
     </DataTemplate>
 
     <!-- 

@@ -5,12 +5,35 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="MRP4MEModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bom_table">
+          <Key>
+            <PropertyRef Name="bom_id" />
+          </Key>
+          <Property Name="type" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="component" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="component_description" Type="varchar" MaxLength="225" Nullable="false" />
+          <Property Name="quantity_per" Type="float" Nullable="false" />
+          <Property Name="unit_of_measure" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="effective_from" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="effective _through" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="cost_of_unit_of_measure" Type="decimal" Precision="15" Scale="8" Nullable="false" />
+          <Property Name="bom_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
+          <Property Name="scrap_percent" Type="decimal" Precision="15" Scale="8" Nullable="false" />
+          <Property Name="scrap_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
+          <Property Name="extended_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
+          <Property Name="version" Type="int" Nullable="false" />
+          <Property Name="item_code" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="item_number" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="engineering_change_order" Type="bit" Nullable="false" />
+          <Property Name="bom_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="parent_bom_id" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="sales_order">
           <Key>
             <PropertyRef Name="so_number" />
           </Key>
           <Property Name="customer_name" Type="varchar" MaxLength="225" Nullable="false" />
-          <Property Name="required_date" Type="date" Nullable="false" />
+          <Property Name="required_date" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="so_number" Type="varchar" MaxLength="18" Nullable="false" />
           <Property Name="item_code" Type="varchar" MaxLength="18" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="225" Nullable="false" />
@@ -26,6 +49,7 @@
           <Property Name="level" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="MRP4MEModelStoreContainer">
+          <EntitySet Name="bom_table" EntityType="Self.bom_table" Schema="Test" store:Type="Tables" />
           <EntitySet Name="sales_order" EntityType="Self.sales_order" Schema="Test" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -34,6 +58,7 @@
       <Schema Namespace="MRP4MEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MRP4MEEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sales_order" EntityType="MRP4MEModel.sales_order" />
+          <EntitySet Name="bom_table" EntityType="MRP4MEModel.bom_table" />
         </EntityContainer>
         <EntityType Name="sales_order">
           <Key>
@@ -54,6 +79,29 @@
           <Property Name="upload_image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="user" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="level" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bom_table">
+          <Key>
+            <PropertyRef Name="bom_id" />
+          </Key>
+          <Property Name="type" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="component" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="component_description" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="quantity_per" Type="Single" Nullable="false" />
+          <Property Name="unit_of_measure" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="effective_from" Type="DateTime" Nullable="false" />
+          <Property Name="effective__through" Type="DateTime" Nullable="false" />
+          <Property Name="cost_of_unit_of_measure" Type="Decimal" Nullable="false" />
+          <Property Name="bom_cost" Type="Decimal" Nullable="false" />
+          <Property Name="scrap_percent" Type="Decimal" Nullable="false" />
+          <Property Name="scrap_cost" Type="Decimal" Nullable="false" />
+          <Property Name="extended_cost" Type="Decimal" Nullable="false" />
+          <Property Name="version" Type="Int32" Nullable="false" />
+          <Property Name="item_code" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="item_number" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="engineering_change_order" Type="Boolean" Nullable="false" />
+          <Property Name="bom_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="parent_bom_id" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -79,6 +127,30 @@
                 <ScalarProperty Name="so_number" ColumnName="so_number" />
                 <ScalarProperty Name="required_date" ColumnName="required_date" />
                 <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bom_table">
+            <EntityTypeMapping TypeName="MRP4MEModel.bom_table">
+              <MappingFragment StoreEntitySet="bom_table">
+                <ScalarProperty Name="parent_bom_id" ColumnName="parent_bom_id" />
+                <ScalarProperty Name="bom_id" ColumnName="bom_id" />
+                <ScalarProperty Name="engineering_change_order" ColumnName="engineering_change_order" />
+                <ScalarProperty Name="item_number" ColumnName="item_number" />
+                <ScalarProperty Name="item_code" ColumnName="item_code" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="extended_cost" ColumnName="extended_cost" />
+                <ScalarProperty Name="scrap_cost" ColumnName="scrap_cost" />
+                <ScalarProperty Name="scrap_percent" ColumnName="scrap_percent" />
+                <ScalarProperty Name="bom_cost" ColumnName="bom_cost" />
+                <ScalarProperty Name="cost_of_unit_of_measure" ColumnName="cost_of_unit_of_measure" />
+                <ScalarProperty Name="effective__through" ColumnName="effective _through" />
+                <ScalarProperty Name="effective_from" ColumnName="effective_from" />
+                <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
+                <ScalarProperty Name="quantity_per" ColumnName="quantity_per" />
+                <ScalarProperty Name="component_description" ColumnName="component_description" />
+                <ScalarProperty Name="component" ColumnName="component" />
+                <ScalarProperty Name="type" ColumnName="type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

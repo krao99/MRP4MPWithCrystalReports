@@ -315,7 +315,7 @@ namespace MRP4ME.ViewModel
         /// <summary>
         /// Returns a command that saves the sales order.
         /// </summary>
-        public ICommand SavePOCommand
+        public ICommand SaveSOCommand
         {
             get
             {
@@ -426,7 +426,7 @@ namespace MRP4ME.ViewModel
         }
 
         /// <summary>
-        /// Saves the customer to the repository.  This method is invoked by the SaveCommand.
+        /// Saves the SO to the DB.  This method is invoked by the SaveCommand.
         /// </summary>
         public void Save()
         {

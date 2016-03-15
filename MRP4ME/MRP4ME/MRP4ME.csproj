@@ -159,7 +159,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\bom_table.cs">
+      <DependentUpon>MRP4MEModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\EEmployee.cs" />
+    <Compile Include="Model\BOMModel.cs" />
     <Compile Include="Reports\BOMReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,18 +202,18 @@
     <Compile Include="UIElementsLib\TabItemBackgroundColourConverter.cs" />
     <Compile Include="ValidationHelpers\SalesOrderHelper.cs" />
     <Compile Include="ViewModel\BOMDashBoardViewModel.cs" />
+    <Compile Include="ViewModel\BOMViewModel.cs" />
     <Compile Include="ViewModel\Controller.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
-    <Compile Include="ViewModel\MaterialRequirementViewModel.cs" />
     <Compile Include="ViewModel\ValidatableModel.cs" />
     <Compile Include="View\BOMDashBoardView.xaml.cs">
       <DependentUpon>BOMDashBoardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BOMView.xaml.cs">
+      <DependentUpon>BOMView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialRequirement.xaml.cs">
-      <DependentUpon>MaterialRequirement.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SalesOrderView.xaml.cs">
       <DependentUpon>SalesOrderView.xaml</DependentUpon>
@@ -306,11 +310,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\HomeView.xaml">
+    <Page Include="View\BOMView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MaterialRequirement.xaml">
+    <Page Include="View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
