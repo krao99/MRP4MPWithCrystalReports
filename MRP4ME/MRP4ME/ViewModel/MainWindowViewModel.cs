@@ -29,7 +29,6 @@ namespace MRP4ME.ViewModel
         public ICommand PrintBOMCommand { get; set; }
         
         ReadOnlyCollection<CommandViewModel> _commands;
-       // sales_order _salesorder;
         
         ObservableCollection<WorkspaceViewModel> _workspaces;
 
@@ -55,10 +54,6 @@ namespace MRP4ME.ViewModel
             this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
 
             #endregion BOM commands
-
-
-
-            //_salesorder = new sales_order();
 
             this.ShowHomeView();
         }
@@ -252,8 +247,6 @@ namespace MRP4ME.ViewModel
             // bool BOMWorkspaceExist = false;
             //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
 
-            //ReportViewModel reportVM = new ReportViewModel("printBOM");
-            
             SalesOrder salesorder = new SalesOrder();
 
             List<SalesOrder> salesOrdersList = salesorder.GetAllSalesOrders();
@@ -262,7 +255,6 @@ namespace MRP4ME.ViewModel
             {
                 ReportViewerUI repWindow = new ReportViewerUI();
                 BOMReport soReport = new BOMReport();
-                //soReport.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
                 ReportUtility.Display_report(soReport, salesOrdersList, repWindow);
             }
 
