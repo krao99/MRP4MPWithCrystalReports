@@ -15,14 +15,14 @@
           <Property Name="quantity_per" Type="float" Nullable="false" />
           <Property Name="unit_of_measure" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="effective_from" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="effective _through" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="effective_through" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="cost_of_unit_of_measure" Type="decimal" Precision="15" Scale="8" Nullable="false" />
           <Property Name="bom_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
           <Property Name="scrap_percent" Type="decimal" Precision="15" Scale="8" Nullable="false" />
           <Property Name="scrap_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
           <Property Name="extended_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
           <Property Name="version" Type="int" Nullable="false" />
-          <Property Name="item_code" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="item_code" Type="varchar" MaxLength="18" />
           <Property Name="item_number" Type="varchar" MaxLength="18" Nullable="false" />
           <Property Name="engineering_change_order" Type="bit" Nullable="false" />
           <Property Name="bom_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
@@ -90,14 +90,14 @@
           <Property Name="quantity_per" Type="Single" Nullable="false" />
           <Property Name="unit_of_measure" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="effective_from" Type="DateTime" Nullable="false" />
-          <Property Name="effective__through" Type="DateTime" Nullable="false" />
+          <Property Name="effective_through" Type="DateTime" Nullable="false" />
           <Property Name="cost_of_unit_of_measure" Type="Decimal" Nullable="false" />
           <Property Name="bom_cost" Type="Decimal" Nullable="false" />
           <Property Name="scrap_percent" Type="Decimal" Nullable="false" />
           <Property Name="scrap_cost" Type="Decimal" Nullable="false" />
           <Property Name="extended_cost" Type="Decimal" Nullable="false" />
           <Property Name="version" Type="Int32" Nullable="false" />
-          <Property Name="item_code" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="item_code" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
           <Property Name="item_number" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
           <Property Name="engineering_change_order" Type="Boolean" Nullable="false" />
           <Property Name="bom_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -144,7 +144,7 @@
                 <ScalarProperty Name="scrap_percent" ColumnName="scrap_percent" />
                 <ScalarProperty Name="bom_cost" ColumnName="bom_cost" />
                 <ScalarProperty Name="cost_of_unit_of_measure" ColumnName="cost_of_unit_of_measure" />
-                <ScalarProperty Name="effective__through" ColumnName="effective _through" />
+                <ScalarProperty Name="effective_through" ColumnName="effective_through" />
                 <ScalarProperty Name="effective_from" ColumnName="effective_from" />
                 <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
                 <ScalarProperty Name="quantity_per" ColumnName="quantity_per" />

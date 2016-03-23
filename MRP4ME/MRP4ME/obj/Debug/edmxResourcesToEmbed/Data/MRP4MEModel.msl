@@ -36,7 +36,7 @@
           <ScalarProperty Name="scrap_percent" ColumnName="scrap_percent" />
           <ScalarProperty Name="bom_cost" ColumnName="bom_cost" />
           <ScalarProperty Name="cost_of_unit_of_measure" ColumnName="cost_of_unit_of_measure" />
-          <ScalarProperty Name="effective__through" ColumnName="effective _through" />
+          <ScalarProperty Name="effective_through" ColumnName="effective_through" />
           <ScalarProperty Name="effective_from" ColumnName="effective_from" />
           <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
           <ScalarProperty Name="quantity_per" ColumnName="quantity_per" />

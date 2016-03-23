@@ -205,6 +205,7 @@
     <Compile Include="ViewModel\BOMViewModel.cs" />
     <Compile Include="ViewModel\Controller.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\LocateBOMViewModel.cs" />
     <Compile Include="ViewModel\ValidatableModel.cs" />
     <Compile Include="View\BOMDashBoardView.xaml.cs">
       <DependentUpon>BOMDashBoardView.xaml</DependentUpon>
@@ -214,6 +215,9 @@
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LocateBOM.xaml.cs">
+      <DependentUpon>LocateBOM.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SalesOrderView.xaml.cs">
       <DependentUpon>SalesOrderView.xaml</DependentUpon>
@@ -315,6 +319,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LocateBOM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

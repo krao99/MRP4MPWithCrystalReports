@@ -386,10 +386,7 @@ namespace MRP4ME.ViewModel
                     {
                         try
                         {
-                            // Shouldn't get to here if the controls do not have valid values.
-                            //int x = Convert.ToInt32(this.Quantity);
                             Save();
-
                         }
                         catch (Exception)
                         {
@@ -438,7 +435,7 @@ namespace MRP4ME.ViewModel
                     this.QuantityPer = _bom.quantity_per.ToString();
                     this.UnitOfMeasure = _bom.unit_of_measure;
                     this.EffectiveFrom = _bom.effective_from;
-                    this.EffectiveThrough = _bom.effective__through;
+                    this.EffectiveThrough = _bom.effective_through;
                     this.EngineeringChangeOrder = _bom.engineering_change_order.ToString();
                     this.CostOfUnitOfMeasure = _bom.cost_of_unit_of_measure.ToString();
                     this.BOMCost = _bom.bom_cost.ToString();
@@ -483,7 +480,7 @@ namespace MRP4ME.ViewModel
                     _bom.quantity_per = Convert.ToSingle(bomForDB.quantity_per);
                     _bom.unit_of_measure = bomForDB.unit_of_measure;
                     _bom.effective_from = DateTime.Parse(dateValueEffFrom.ToString("yyyy/MM/dd"));
-                    _bom.effective__through = DateTime.Parse(dateValueEffTo.ToString("yyyy/MM/dd"));
+                    _bom.effective_through = DateTime.Parse(dateValueEffTo.ToString("yyyy/MM/dd"));
                     _bom.engineering_change_order = this.EngineeringChangeOrder == "Yes"? true : false;
                     _bom.cost_of_unit_of_measure = Convert.ToDecimal(bomForDB.cost_of_unit_of_measure);
                     _bom.scrap_percent = Convert.ToDecimal(bomForDB.scrap_percent);

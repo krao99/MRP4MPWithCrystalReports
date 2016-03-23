@@ -8,47 +8,53 @@ This resource dictionary is used by the MainWindow.
   xmlns:vw="clr-namespace:MRP4ME.View"
   x:Class="mainWindowresource"
   xmlns:local="clr-namespace:MRP4ME.UIElementsLib"
-    
   >
 
     <local:BoolToVisibleConveter x:Key="BoolToVisConverter"/>
     <local:TabItemBackgroundColourConverter x:Key="TabItemBackgroundColourConverter"/>
     
     <!-- 
-  This template applies an Home view  to an instance 
-  of the HomeViewModel class shown in the main window.
-  -->
+        This template applies an Home view  to an instance 
+        of the HomeViewModel class shown in the main window.
+    -->
     <DataTemplate DataType="{x:Type vm:HomeViewModel}">
         <vw:HomeView />
     </DataTemplate>
 
     <!-- 
-  This template applies an Sales Order view to an instance 
-  of the SalesOrderView class shown in the main window.
-  -->
+        This template applies an Sales Order view to an instance 
+        of the SalesOrderView class shown in the main window.
+    -->
     <DataTemplate DataType="{x:Type vm:SalesOrderViewModel}">
         <vw:SalesOrderView />
     </DataTemplate>
 
     <!-- 
-  This template applies an BOM view  to an instance 
-  of the BOMDashBoardViewModel class shown in the main window.
-  -->
-    <DataTemplate DataType="{x:Type vm:BOMDashBoardViewModel}">
-        <vw:BOMDashBoardView />
-    </DataTemplate>
-
-    <!-- 
-  This template applies an BOM view  to an instance 
-  of the BOMDashBoardViewModel class shown in the main window.
-  -->
+        This template applies an BOM view  to an instance 
+        of the BOMDashBoardViewModel class shown in the main window.
+    -->
     <DataTemplate DataType="{x:Type vm:BOMViewModel}">
         <vw:BOMView />
     </DataTemplate>
+    
+    <!-- 
+        This template applies an Locate BOM view instance 
+        of the LocateBOMViewModel class shown in the main window.
+    -->
+    <DataTemplate DataType="{x:Type vm:LocateBOMViewModel}">
+        <vw:LocateBOM />
+    </DataTemplate>
 
     <!-- 
-  This style configures the main content areas in the main window.
-  -->
+        This template applies an BOM DashBoard view to an instance 
+        of the BOMDashBoardViewModel class shown in the main window.
+    -->
+    <DataTemplate DataType="{x:Type vm:BOMDashBoardViewModel}">
+        <vw:BOMDashBoardView />
+    </DataTemplate>
+    <!-- 
+        This style configures the main content areas in the main window.
+    -->
   <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
     <Setter Property="HeaderTemplate">
       <Setter.Value>

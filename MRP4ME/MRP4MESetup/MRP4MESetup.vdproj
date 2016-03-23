@@ -129,6 +129,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C376EC571B634CB1A5F7C7220DEBDD6D"
+        "OwnerKey" = "8:_66E417945B094D27BD5F92C1815C323C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DD927BC31AE22C898A01E0215BA31776"
         "OwnerKey" = "8:_66E417945B094D27BD5F92C1815C323C"
         "MsmSig" = "8:_UNDEFINED"
@@ -191,6 +197,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_4BC133A6156434C01F9286A097BA7E18"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C376EC571B634CB1A5F7C7220DEBDD6D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -260,11 +272,6 @@
                     {
                     "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
                     "ProductCode" = "8:.NETFramework,Version=v4.5"
-                    }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:SAP.CrystalReports14.NET.2.0"
-                    {
-                    "Name" = "8:SAP Crystal Reports Runtime Engine for .NET Framework"
-                    "ProductCode" = "8:SAP.CrystalReports14.NET.2.0"
                     }
                 }
             }
@@ -690,6 +697,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C376EC571B634CB1A5F7C7220DEBDD6D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C376EC571B634CB1A5F7C7220DEBDD6D"
+                    {
+                    "Name" = "8:MySql.Data.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MySql.Data.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_10321727153F42A390F19119B2C73C92"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DD927BC31AE22C898A01E0215BA31776"
             {
             "AssemblyRegister" = "3:1"
@@ -717,7 +755,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -820,7 +858,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MRP4ME"
         "ProductCode" = "8:{A31FBF9A-C9C0-4F51-A19C-D9B5324BA814}"
-        "PackageCode" = "8:{5DEB6C2F-0599-448A-865C-D71B74E8C35A}"
+        "PackageCode" = "8:{3EA7DBD9-1B80-47F4-9F4F-FA3A70D7CAEE}"
         "UpgradeCode" = "8:{02B8E5F8-E242-42DA-9051-EB29E4359AB9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

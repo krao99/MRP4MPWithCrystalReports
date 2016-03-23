@@ -20,7 +20,7 @@ namespace MRP4ME.Data
         public float quantity_per { get; set; }
         public string unit_of_measure { get; set; }
         public System.DateTime effective_from { get; set; }
-        public System.DateTime effective__through { get; set; }
+        public System.DateTime effective_through { get; set; }
         public decimal cost_of_unit_of_measure { get; set; }
         public decimal bom_cost { get; set; }
         public decimal scrap_percent { get; set; }

@@ -51,6 +51,8 @@ namespace MRP4ME.ViewModel
 
             this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
             this.NewBOMCommand = new RelayCommand(param => this.CreateNewBOM());
+            this.LocateBOMCommand = new RelayCommand(param => this.ShowLocateBOM());
+            
             this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
 
             #endregion BOM commands
@@ -202,26 +204,6 @@ namespace MRP4ME.ViewModel
             }
         }
 
-
-        void ShowBOMDashBoard()
-        {
-            bool BOMWorkspaceExist = false;
-            //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
-
-            BOMDashBoardViewModel workspace = new BOMDashBoardViewModel();
-            if (this.Workspaces.Count > 0)
-            {
-                BOMWorkspaceExist = workSpaceExist(Workspaces, "BOMDashBoardViewModel");
-            }
-
-            //if this work space is not exist
-            if (!BOMWorkspaceExist)
-            {
-                this.Workspaces.Add(workspace);
-                this.SetActiveWorkspace(workspace);
-            }
-        }
-
         void CreateNewBOM()
         {
             bool NewBOMWorkspaceExist = false;
@@ -242,15 +224,33 @@ namespace MRP4ME.ViewModel
             }
         }
 
+        void ShowBOMDashBoard()
+        {
+            bool BOMWorkspaceExist = false;
+            //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
+
+            BOMDashBoardViewModel workspace = new BOMDashBoardViewModel();
+            if (this.Workspaces.Count > 0)
+            {
+                BOMWorkspaceExist = workSpaceExist(Workspaces, "BOMDashBoardViewModel");
+            }
+
+            //if this work space is not exist
+            if (!BOMWorkspaceExist)
+            {
+                this.Workspaces.Add(workspace);
+                this.SetActiveWorkspace(workspace);
+            }
+        }
+
         void PrintBOM()
         {
             // bool BOMWorkspaceExist = false;
-            //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
 
             SalesOrder salesorder = new SalesOrder();
 
             List<SalesOrder> salesOrdersList = salesorder.GetAllSalesOrders();
-            
+
             if (salesOrdersList.Count > 0)
             {
                 ReportViewerUI repWindow = new ReportViewerUI();
@@ -259,6 +259,28 @@ namespace MRP4ME.ViewModel
             }
 
         }
+
+        void ShowLocateBOM()
+        {
+            bool BOMWorkspaceExist = false;
+
+            LocateBOMViewModel workspace = new LocateBOMViewModel();
+            if (this.Workspaces.Count > 0)
+            {
+                BOMWorkspaceExist = workSpaceExist(Workspaces, "LocateBOMViewModel");
+            }
+
+            //if this work space is not exist
+            if (!BOMWorkspaceExist)
+            {
+                this.Workspaces.Add(workspace);
+                this.SetActiveWorkspace(workspace);
+            }
+        }
+
+
+
+        
 
         void SetActiveWorkspace(WorkspaceViewModel workspace)
         {

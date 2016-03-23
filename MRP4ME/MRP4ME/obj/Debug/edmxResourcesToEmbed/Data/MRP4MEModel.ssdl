@@ -10,14 +10,14 @@
     <Property Name="quantity_per" Type="float" Nullable="false" />
     <Property Name="unit_of_measure" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="effective_from" Type="datetime" Precision="0" Nullable="false" />
-    <Property Name="effective _through" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="effective_through" Type="datetime" Precision="0" Nullable="false" />
     <Property Name="cost_of_unit_of_measure" Type="decimal" Precision="15" Scale="8" Nullable="false" />
     <Property Name="bom_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
     <Property Name="scrap_percent" Type="decimal" Precision="15" Scale="8" Nullable="false" />
     <Property Name="scrap_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
     <Property Name="extended_cost" Type="decimal" Precision="15" Scale="8" Nullable="false" />
     <Property Name="version" Type="int" Nullable="false" />
-    <Property Name="item_code" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="item_code" Type="varchar" MaxLength="18" />
     <Property Name="item_number" Type="varchar" MaxLength="18" Nullable="false" />
     <Property Name="engineering_change_order" Type="bit" Nullable="false" />
     <Property Name="bom_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />

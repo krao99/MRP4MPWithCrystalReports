@@ -156,7 +156,7 @@
         <ComboBox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" Height="23" Margin="9,5,0,0"
                  ItemsSource="{Binding Path=ECOTypes, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding EngineeringChangeOrder, Mode=TwoWay}"
-                  VerticalAlignment="Top" Width="189" 
+                  VerticalAlignment="Top" Width="189" SelectedIndex="1" 
                   />
 
         <TextBox Grid.Column="1" Grid.Row="10" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11" >
