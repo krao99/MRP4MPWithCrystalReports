@@ -47,7 +47,7 @@
             <RowDefinition Height="Auto" MinHeight="40"></RowDefinition>
             <RowDefinition Height="32" MinHeight="32"></RowDefinition>
             <RowDefinition Height="32"></RowDefinition>
-            <RowDefinition Height="32"></RowDefinition>
+            <!--<RowDefinition Height="32"></RowDefinition>-->
             <RowDefinition Height="32"></RowDefinition>
             <RowDefinition Height="32"></RowDefinition>
             <RowDefinition Height="32"></RowDefinition>
@@ -85,20 +85,20 @@
 
         <!--First Column Content-->
 
-        <Label Content="Item Number: " Grid.Column="0" Grid.Row="1" Margin="5,3,5,1" Height="30" FontWeight="Bold" />
+        <Label Content="Component #: " Grid.Column="0" Grid.Row="1" Margin="5,3,5,1" Height="30" FontWeight="Bold" />
         <Label Content="Version: " Grid.Column="0" Grid.Row="2" Margin="5,3" Height="30" FontWeight="Bold" Width="145"/>
-        <Label Content="Component: " Grid.Column="0" Grid.Row="3" Margin="5,3" FontWeight="Bold" Height="30"/>
-        <Label Content="Component Desc.: " Grid.Column="0" Grid.Row="4" Margin="5,3" FontWeight="Bold" Height="30"/>
-        <Label Content="Type: " Grid.Column="0" Grid.Row="5" Margin="5,3" FontWeight="Bold" Height="30" />
-        <Label Content="Quantity: " Grid.Column="0" Grid.Row="6" Margin="5,3" FontWeight="Bold" Height="30" />
-        <Label Content="UM: " Grid.Column="0" Grid.Row="7"  Margin="5,3,5,2" FontWeight="Bold" Height="30"/>
-        <Label Content="Effective from: " Grid.Column="0" Grid.Row="8"  Margin="5,3" Height="30" FontWeight="Bold" />
-        <Label Content="ECO: " Grid.Column="0" Grid.Row="9"  Margin="5,3" FontWeight="Bold" Height="30" Width="145" />
-        <Label Content="Cost UM: " Grid.Column="0" Grid.Row="10"  Margin="5,3" Height="30" FontWeight="Bold" />
-        <Label Content="BOM Cost(total): " Grid.Column="0" Grid.Row="11"  Margin="5,3" Height="30" FontWeight="Bold" />
-        <Label Content="Scrap %: " Grid.Column="0" Grid.Row="12"  Margin="5,3" Height="30" FontWeight="Bold" />
-        <Label Content="Scrap Cost: " Grid.Column="0" Grid.Row="13"  Margin="5,3" Height="30" FontWeight="Bold" />
-        <Label Content="Extended Cost: " Grid.Column="0" Grid.Row="14"  Margin="5,3" Height="30" FontWeight="Bold" />
+       <!-- <Label Content="Component: " Grid.Column="0" Grid.Row="3" Margin="5,3" FontWeight="Bold" Height="30"/> -->
+        <Label Content="Component Desc.: " Grid.Column="0" Grid.Row="3" Margin="5,3" FontWeight="Bold" Height="30"/>
+        <Label Content="Type: " Grid.Column="0" Grid.Row="4" Margin="5,3" FontWeight="Bold" Height="30" />
+        <Label Content="Quantity: " Grid.Column="0" Grid.Row="5" Margin="5,3" FontWeight="Bold" Height="30" />
+        <Label Content="UM: " Grid.Column="0" Grid.Row="6" Margin="5,3,5,2" FontWeight="Bold" Height="30"/>
+        <Label Content="Effective from: " Grid.Column="0" Grid.Row="7"  Margin="5,3" Height="30" FontWeight="Bold" />
+        <Label Content="ECO: " Grid.Column="0" Grid.Row="8"  Margin="5,3" FontWeight="Bold" Height="30" Width="145" />
+        <Label Content="Cost UM: " Grid.Column="0" Grid.Row="9"  Margin="5,3" Height="30" FontWeight="Bold" />
+        <Label Content="BOM Cost(total): " Grid.Column="0" Grid.Row="10"  Margin="5,3" Height="30" FontWeight="Bold" />
+        <Label Content="Scrap %: " Grid.Column="0" Grid.Row="11"  Margin="5,3" Height="30" FontWeight="Bold" />
+        <Label Content="Scrap Cost: " Grid.Column="0" Grid.Row="12"  Margin="5,3" Height="30" FontWeight="Bold" />
+        <Label Content="Extended Cost: " Grid.Column="0" Grid.Row="13"  Margin="5,3" Height="30" FontWeight="Bold" />
 
         <!--Second Column Content-->
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
@@ -116,30 +116,30 @@
         <TextBox Grid.Column="1" Grid.Row="2" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="3"
                  Text="{Binding Path=Version, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}"/>
-
+        <!-- 
         <TextBox Grid.Column="1" Grid.Row="3" Margin="9,5,238,4" Style="{StaticResource TextErrorStyle}" MaxLength="18" 
                  Text="{Binding Path=Component, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" />
-
-        <TextBox Grid.Column="1" Grid.Row="4" Margin="9,5,21,4" Style="{StaticResource TextErrorStyle}" MaxLength="225"
+        -->
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="9,5,21,4" Style="{StaticResource TextErrorStyle}" MaxLength="225"
                  Text="{Binding Path=ComponentDescription, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}"/>
 
-        <ComboBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Height="23" Margin="9,5,0,0"
+        <ComboBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Height="23" Margin="9,5,0,0"
                  ItemsSource="{Binding Path=ItemTypes, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding SelectedItemType, Mode=TwoWay}"
                   VerticalAlignment="Top" Width="189" 
                   />
 
-        <TextBox Grid.Column="1" Grid.Row="6" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11">
+        <TextBox Grid.Column="1" Grid.Row="5" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11">
             <Binding Path="QuantityPer" TargetNullValue="" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged"/>
         </TextBox>
 
-        <TextBox Grid.Column="1" Grid.Row="7" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="18" IsEnabled="{Binding ThisIsEnabled}"
+        <TextBox Grid.Column="1" Grid.Row="6" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="18" IsEnabled="{Binding ThisIsEnabled}"
                  Text="{Binding Path=UnitOfMeasure, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1">
             <DatePicker HorizontalAlignment="Left" Height="28" Margin="10,3,0,0" 
     		    VerticalAlignment="Top" Width="126"  DisplayDate="{x:Static sys:DateTime.Now}"
     		    SelectedDate="{Binding EffectiveFrom, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
@@ -152,30 +152,29 @@
 
         </StackPanel>
 
-
-        <ComboBox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" Height="23" Margin="9,5,0,0"
+        <ComboBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Left" Height="23" Margin="9,5,0,0"
                  ItemsSource="{Binding Path=ECOTypes, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding EngineeringChangeOrder, Mode=TwoWay}"
                   VerticalAlignment="Top" Width="189" SelectedIndex="1" 
                   />
 
-        <TextBox Grid.Column="1" Grid.Row="10" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11" >
+        <TextBox Grid.Column="1" Grid.Row="9" Margin="9,5,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11" >
             <Binding Path="CostOfUnitOfMeasure" TargetNullValue="" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged"/>
         </TextBox>
 
-        <TextBox Grid.Column="1" Grid.Row="11" Margin="9,0,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11" Height="23" VerticalAlignment="Bottom">
+        <TextBox Grid.Column="1" Grid.Row="10" Margin="9,0,350,4" Style="{StaticResource TextErrorStyle}" MaxLength="11" Height="23" VerticalAlignment="Bottom">
             <Binding Path="BOMCost" TargetNullValue="" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged"/>
         </TextBox>
 
-        <TextBox Grid.Column="1" Grid.Row="12" Margin="9,5,411,4" Style="{StaticResource TextErrorStyle}" MaxLength="225"
+        <TextBox Grid.Column="1" Grid.Row="11" Margin="9,5,411,4" Style="{StaticResource TextErrorStyle}" MaxLength="225"
                  Text="{Binding Path=ScrapPercent, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" />
 
-        <TextBox Grid.Column="1" Grid.Row="13" Margin="9,5,350,4" IsReadOnly="True" Style="{StaticResource TextErrorStyle}" MaxLength="225"
+        <TextBox Grid.Column="1" Grid.Row="12" Margin="9,5,350,4" IsReadOnly="True" Style="{StaticResource TextErrorStyle}" MaxLength="225"
                  Text="{Binding Path=ScrapCost, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" Width="142" />
 
-        <TextBox Grid.Column="1" Grid.Row="14" Margin="9,5,350,4" IsReadOnly="True" Style="{StaticResource TextErrorStyle}" MaxLength="225"
+        <TextBox Grid.Column="1" Grid.Row="13" Margin="9,5,350,4" IsReadOnly="True" Style="{StaticResource TextErrorStyle}" MaxLength="225"
                  Text="{Binding Path=ExtendedCost, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, 
                         UpdateSourceTrigger=PropertyChanged}" Width="142" />
 
@@ -187,7 +186,6 @@
         <Button x:Name="btnCancelSO" Content="Cancel"  HorizontalAlignment="Left" Height="30"  Grid.Row="16" Grid.Column="1"
         	VerticalAlignment="Top" Width="100" Background="#FFE2A023" Command="{Binding Path=CloseCommand}" 
                 Margin="357,0,0,0" FontWeight="Bold" RenderTransformOrigin="1.49,0.4"/>
-
 
     </Grid>
 

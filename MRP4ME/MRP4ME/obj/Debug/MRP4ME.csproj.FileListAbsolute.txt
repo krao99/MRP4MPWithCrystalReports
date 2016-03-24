@@ -189,3 +189,4 @@ C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\BOMView.g.cs
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\BOMView.baml
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\LocateBOM.baml
 C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\View\LocateBOM.g.cs
+C:\kotesh\MRP4ME\MRP4ME\MRP4ME\obj\Debug\MRP4ME.UIElementsLib.MsgBox.resources

@@ -196,7 +196,6 @@ This resource dictionary is used by the MainWindow.
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -231,7 +230,6 @@ This resource dictionary is used by the MainWindow.
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -251,9 +249,10 @@ This resource dictionary is used by the MainWindow.
                                     </Label.Background>
                                 </Label>
                                 <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type HeaderedContentControl}}, Path=DataContext}">
-                                    <Button x:Name="btnBOM" Content="Bill of Materials" HorizontalAlignment="Center" 
+                                 <!--   <Button x:Name="btnBOM" Content="Bill of Materials" HorizontalAlignment="Center" 
                                             Height="24" VerticalAlignment="Top" Width="180" Command="{Binding BOMCommand}"
                                             Background="#FFE2A023" Margin="2,2,0,0"/>
+                                    -->
                                     <Button x:Name="btnNewBOM" Content="Create New BOM" HorizontalAlignment="Center" 
                                             Height="24" VerticalAlignment="Top" Width="180" Command="{Binding NewBOMCommand}"
                                             Background="#FFE2A023" Margin="2,2,0,0"/>
@@ -267,8 +266,7 @@ This resource dictionary is used by the MainWindow.
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="120" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
+                                                <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="90" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -277,37 +275,7 @@ This resource dictionary is used by the MainWindow.
                                     </EventTrigger>
                                 </StackPanel.Triggers>
                             </StackPanel>
-                            <StackPanel Name="panelProdSchedule" Height="26">
-                                <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Production Schedule" 
-                                        Foreground="#FFE2A023" FontWeight="Bold" Height="24">
-                                    <Label.Background>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="#FF0F9D58" Offset="0.01"/>
-                                            <GradientStop Color="#FF0F9D58" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </Label.Background>
-                                </Label>
-                                <StackPanel>
-                                    <Button x:Name="btnProdSchedule" Content="Production Schedule" HorizontalAlignment="Center" 
-                                            Height="24" VerticalAlignment="Top" Width="180" 
-                                            Background="#FFE2A023" Margin="2,3,0,0"/>
-                                </StackPanel>
-                                <StackPanel.Triggers>
-                                    <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                </StackPanel.Triggers>
-                            </StackPanel>
+                            
                             <StackPanel Name="panelSpecifications" Height="26">
                                 <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Specifications" 
                                         Foreground="#FFE2A023" FontWeight="Bold" Height="24">
@@ -330,7 +298,6 @@ This resource dictionary is used by the MainWindow.
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -361,7 +328,6 @@ This resource dictionary is used by the MainWindow.
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
@@ -392,7 +358,6 @@ This resource dictionary is used by the MainWindow.
                                                 <DoubleAnimation Storyboard.TargetName="panelHome" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSO" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelBOM" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
-                                                <DoubleAnimation Storyboard.TargetName="panelProdSchedule" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelSpecifications" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelInventory" Storyboard.TargetProperty="Height" To="26" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />
                                                 <DoubleAnimation Storyboard.TargetName="panelReports" Storyboard.TargetProperty="Height" To="60" Duration="0:0:0.50" AccelerationRatio="0.6" DecelerationRatio="0.4" />

@@ -27,9 +27,9 @@ namespace MRP4ME.ViewModel
         public ICommand NewBOMCommand { get; set; }
         public ICommand LocateBOMCommand { get; set; }
         public ICommand PrintBOMCommand { get; set; }
-        
+
         ReadOnlyCollection<CommandViewModel> _commands;
-        
+
         ObservableCollection<WorkspaceViewModel> _workspaces;
 
         #endregion // Fields
@@ -52,7 +52,7 @@ namespace MRP4ME.ViewModel
             this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
             this.NewBOMCommand = new RelayCommand(param => this.CreateNewBOM());
             this.LocateBOMCommand = new RelayCommand(param => this.ShowLocateBOM());
-            
+
             this.PrintBOMCommand = new RelayCommand(param => this.PrintBOM());
 
             #endregion BOM commands
@@ -72,7 +72,7 @@ namespace MRP4ME.ViewModel
         {
             get
             {
-               if (_commands == null)
+                if (_commands == null)
                 {
                     List<CommandViewModel> cmds = this.CreateCommands();
                     _commands = new ReadOnlyCollection<CommandViewModel>(cmds);
@@ -146,7 +146,7 @@ namespace MRP4ME.ViewModel
             if (workspace == null)
             {
                 workspace = new HomeViewModel();
-                
+
                 this.Workspaces.Add(workspace);
             }
             else
@@ -176,7 +176,7 @@ namespace MRP4ME.ViewModel
             {
                 SOWorkspaceExist = workSpaceExist(Workspaces, "SalesOrderViewModel");
             }
-              
+
             //if this work space is not exist
             if (!SOWorkspaceExist)
             {
@@ -195,7 +195,7 @@ namespace MRP4ME.ViewModel
             {
                 SOWorkspaceExist = workSpaceExist(Workspaces, "SalesOrderViewModel");
             }
-              
+
             //if this work space is not exist
             if (!SOWorkspaceExist)
             {
@@ -262,16 +262,16 @@ namespace MRP4ME.ViewModel
 
         void ShowLocateBOM()
         {
-            bool BOMWorkspaceExist = false;
+            bool LocateBOMWorkspaceExist = false;
 
             LocateBOMViewModel workspace = new LocateBOMViewModel();
             if (this.Workspaces.Count > 0)
             {
-                BOMWorkspaceExist = workSpaceExist(Workspaces, "LocateBOMViewModel");
+                LocateBOMWorkspaceExist = workSpaceExist(Workspaces, "LocateBOMViewModel");
             }
 
             //if this work space is not exist
-            if (!BOMWorkspaceExist)
+            if (!LocateBOMWorkspaceExist)
             {
                 this.Workspaces.Add(workspace);
                 this.SetActiveWorkspace(workspace);
@@ -280,7 +280,7 @@ namespace MRP4ME.ViewModel
 
 
 
-        
+
 
         void SetActiveWorkspace(WorkspaceViewModel workspace)
         {
@@ -298,7 +298,7 @@ namespace MRP4ME.ViewModel
             bool isValid = false;
             for (int i = 0; i < Workspaces.Count; i++)
             {
-               
+
                 if (Workspaces[i].GetType().Name.Equals(sWorkSpaceName))
                 {
                     isValid = true;

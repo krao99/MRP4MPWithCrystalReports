@@ -46,8 +46,13 @@ namespace MRP4ME.ViewModel
             }
             set
             {
+                using (var dbContext = new MRP4MEEntities())
+                {
+                    _salesorders = value;
+                    dbContext.SaveChanges();
+                }
                 NotifyPropertyChanged("Salesorders");
-                return;
+                
             }
         }
         /// <summary>

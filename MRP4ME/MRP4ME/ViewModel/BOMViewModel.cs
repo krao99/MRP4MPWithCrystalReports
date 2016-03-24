@@ -8,7 +8,7 @@ using MRP4ME.Model;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Input;
-using System.Windows;
+//using System.Windows;
 //using System.Data.Entity.Core;
 using System.Data.SqlClient;
 using System.Data.Entity.Infrastructure;
@@ -18,6 +18,8 @@ using System.Diagnostics;
 using System.Data.Entity;
 using System.Collections.ObjectModel;
 using System.Threading;
+using System.Windows.Forms;
+using MRP4ME.UIElementsLib;
 
 namespace MRP4ME.ViewModel
 {
@@ -37,6 +39,7 @@ namespace MRP4ME.ViewModel
         #region Fields
 
         RelayCommand _saveCommand;
+        RelayCommand _itemDetailsCommand;
 
         BOMModel bomForDB = new BOMModel();
         bool isNewBOM = true;
@@ -75,18 +78,9 @@ namespace MRP4ME.ViewModel
             base.ErrorsChanged += OnErrorsChanged;
             this.ThisIsEnabled = true;
 
-            //this.ItemTypes = new List<string>() { "London", "Birmingham", "Glasgow" };
-
-            if (!String.IsNullOrEmpty(ParentBOMId))
-            {
-                isNewBOM = false;
-                PopulateBOM(BOMId);
-            }
-            else
-            {
-                this.EffectiveFrom = DateTime.Today;
-                this.EffectiveThrough = DateTime.Today;
-            }
+            this.EffectiveFrom = DateTime.Today;
+            this.EffectiveThrough = DateTime.Today;
+            
         }
 
         #endregion // Constructor
@@ -373,6 +367,56 @@ namespace MRP4ME.ViewModel
             }
         }
 
+        
+        /// <summary>
+        /// Returns a command to locate bom.
+        /// </summary>
+        public ICommand ItemDetailsCommand
+        {
+            get
+            {
+                if (_itemDetailsCommand == null)
+                {
+                    _itemDetailsCommand = new RelayCommand(
+                            param => this.OpenItemDetailsDialog()
+                         );
+                }
+                return _itemDetailsCommand;
+            }
+        }
+
+        public void OpenItemDetailsDialog()
+        {
+
+            if (String.IsNullOrEmpty(this.ItemCode))
+            {
+                System.Windows.MessageBox.Show("Please enter Item Code.");
+                return;
+            }
+                
+            using (var dbContext = new MRP4MEEntities())
+            {
+
+                var so = (from s in dbContext.sales_order
+                            where s.item_code == this.ItemCode
+                            select s).FirstOrDefault();
+
+              if (so != null)
+                {
+
+                    DialogResult result = MsgBox.Show("Item Code:" + so.item_code + Environment.NewLine +
+                        "Item Description: " + so.description + Environment.NewLine +
+                        "Type: Fin " + Environment.NewLine +
+                        "Quantity:" + so.quantity,
+                        "MRP4ME", MsgBox.Buttons.OK, MsgBox.Icon.Info, MsgBox.AnimateStyle.FadeIn);
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Please enter valid Item Code");
+                }
+            }
+        }
+
         /// <summary>
         /// Returns a command that saves the sales order.
         /// </summary>
@@ -415,36 +459,7 @@ namespace MRP4ME.ViewModel
 
         #region Public Methods
 
-        private void PopulateBOM(int BOMId)
-        {
-            bom_table _bom = new bom_table();
-
-            using (var dbContext = new MRP4MEEntities())
-            {
-                _bom = dbContext.bom_table.Find(BOMId);
-
-                if (!String.IsNullOrEmpty(_bom.item_number))
-                {
-                    this.ThisIsEnabled = false;
-                    this.ItemNumber = _bom.item_number;
-                    this.ItemCode = _bom.item_code;
-                    this.Version = _bom.version.ToString();
-                    this.Component = _bom.component;
-                    this.ComponentDescription = _bom.component_description;
-                    this.SelectedItemType = _bom.type;
-                    this.QuantityPer = _bom.quantity_per.ToString();
-                    this.UnitOfMeasure = _bom.unit_of_measure;
-                    this.EffectiveFrom = _bom.effective_from;
-                    this.EffectiveThrough = _bom.effective_through;
-                    this.EngineeringChangeOrder = _bom.engineering_change_order.ToString();
-                    this.CostOfUnitOfMeasure = _bom.cost_of_unit_of_measure.ToString();
-                    this.BOMCost = _bom.bom_cost.ToString();
-                    this.ScrapPercent = _bom.scrap_percent.ToString();
-                    this.ScrapCost = _bom.scrap_cost.ToString();
-                    this.ExtendedCost = _bom.extended_cost.ToString();
-                }
-            }
-        }
+        
 
         /// <summary>
         /// Saves the BOM to the DB.  This method is invoked by the SaveCommand.
@@ -483,6 +498,7 @@ namespace MRP4ME.ViewModel
                     _bom.effective_through = DateTime.Parse(dateValueEffTo.ToString("yyyy/MM/dd"));
                     _bom.engineering_change_order = this.EngineeringChangeOrder == "Yes"? true : false;
                     _bom.cost_of_unit_of_measure = Convert.ToDecimal(bomForDB.cost_of_unit_of_measure);
+                    _bom.bom_cost = Convert.ToDecimal(bomForDB.bom_cost);
                     _bom.scrap_percent = Convert.ToDecimal(bomForDB.scrap_percent);
                     _bom.scrap_cost = Convert.ToDecimal(bomForDB.scrap_cost);
                     _bom.extended_cost = Convert.ToDecimal(bomForDB.extended_cost);
@@ -503,11 +519,9 @@ namespace MRP4ME.ViewModel
                 ClearForm();
 
                 MessageBox.Show("BOM successfully saved.", "MRP4ME");
-                //NotifyPropertyChanged("SO");
             }
             catch (DbUpdateException ex)
             {
-                //MessageBox.Show("SO Number already exist!" , "MRP4ME");
                 AddError(new ValidationError("BOM", Constraint_Mandatory, " Item Number already exist!"));
                 NotifyPropertyChanged("ItemNumber");
                 Tracer.LogUserDefinedValidation("DbUpdateException. " + ex.Message);
@@ -553,10 +567,6 @@ namespace MRP4ME.ViewModel
 
         }
 
-        
-
-       
-
         #endregion // Public Methods
 
         #region Private Helpers
@@ -575,11 +585,12 @@ namespace MRP4ME.ViewModel
             decimal extCost = 0;
             decimal scrapCost = 0;
 
-            if (GetPropertyErrors("ScrapPercent") == null )
-	            scrapPct = Convert.ToDecimal(this.ScrapPercent);
-
-            if (GetPropertyErrors("BOMCost") == null )
+//If these two doesnt have any input errors
+            if (GetPropertyErrors("ScrapPercent") == null && GetPropertyErrors("BOMCost") == null && !String.IsNullOrEmpty(this.ScrapPercent)  )
+            {
+                scrapPct = Convert.ToDecimal(this.ScrapPercent);
 	            bomCost = Convert.ToDecimal(this.BOMCost);
+            }
 
             if(bomCost > 0) 
             {
@@ -839,14 +850,16 @@ namespace MRP4ME.ViewModel
                 case "BOMCost":
                     {
                         ValidateDecimal(this.BOMCost, propertyName);
-                        CalculateFields();
+                        // if (GetPropertyErrors("BOMCost") == null )
+                            CalculateFields();
                     }
                     break;
                     
                 case "ScrapPercent":
                     {
                         ValidatePercent(this.ScrapPercent, propertyName);
-                        CalculateFields();
+                       // if (GetPropertyErrors("ScrapPercent") == null)
+                            CalculateFields();
 
                     }
                     break;

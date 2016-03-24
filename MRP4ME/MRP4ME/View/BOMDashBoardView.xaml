@@ -7,76 +7,6 @@
              d:DesignWidth="660" FontFamily="Verdana" BorderThickness="1" Height="560">
 
     <UserControl.Resources>
-        <Style x:Key="TreeViewItemFocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border>
-                            <Rectangle Margin="0,0,0,0"
-             StrokeThickness="5"
-             Stroke="Black"
-             StrokeDashArray="1 2"
-             Opacity="0"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}">
-
-            <Setter Property="Background" Value="Gray"/>
-            <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="Padding" Value="3"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItemFocusVisual}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TreeViewItem}">
-                        <Grid>
-
-                            <Border Name="Bd"
-                              Grid.Column="0"                                
-                              Background="{TemplateBinding Background}"
-                              BorderBrush="{TemplateBinding BorderBrush}"
-                              BorderThickness="{TemplateBinding BorderThickness}"
-                              Padding="{TemplateBinding Padding}">
-                                <ContentPresenter x:Name="PART_Header"
-                                        ContentSource="Header"
-                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-                            </Border>
-                            <ItemsPresenter x:Name="ItemsHost"
-                          Grid.Row="1"
-                          Grid.Column="0"
-                          />
-                        </Grid>
-
-                        <ControlTemplate.Triggers>
-
-                            <Trigger Property="IsExpanded" Value="true">
-                                <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
-                            </Trigger>
-
-                            <Trigger Property="IsSelected" Value="true">
-                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                            </Trigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="false"/>
-                                    <Condition Property="IsSelectionActive" Value="false"/>
-                                </MultiTrigger.Conditions>
-                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                            </MultiTrigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style TargetType="{x:Type StackPanel}">
             <Style.Resources>
                 <Style TargetType="{x:Type Button}">
@@ -104,10 +34,12 @@
 
         <Grid Margin="0,0,0,30" Background="#FFE2FEE2" >
             <StackPanel x:Name="stpOuter" Background="Transparent">
-                <DataGrid x:Name="dgBOM" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
-                      ItemsSource="{Binding Salesorders}" Background="Transparent" 
+                <DataGrid x:Name="dgBOM" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="False"
+                      ItemsSource="{Binding Salesorders, NotifyOnValidationError=True, ValidatesOnNotifyDataErrors=True, 
+                        UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Background="Transparent" 
                       HorizontalGridLinesBrush="#FF0F9D58" VerticalGridLinesBrush="#FF0F9D58" Margin="0,0,0,11" 
                       ColumnHeaderHeight="40" RowBackground="#FFE2FEE2" SelectionUnit="Cell" 
+                          AlternatingRowBackground="Gainsboro"  AlternationCount="2"
                        Height="486" HeadersVisibility="Column" >
                     <DataGrid.Resources>
 
@@ -150,7 +82,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         <DataGridTextColumn Header="  Delivery date " Binding="{Binding required_date, StringFormat={}{0:MM/dd/yyyy}}" />
-                        <DataGridTextColumn Header="  Item No  " Binding="{Binding item_code}" />
+                        <DataGridTextColumn Header="  Item Code  " Binding="{Binding item_code}" />
 
                         <DataGridTextColumn Header="  Name  " Binding="{Binding name}" >
                             <DataGridTextColumn.ElementStyle>

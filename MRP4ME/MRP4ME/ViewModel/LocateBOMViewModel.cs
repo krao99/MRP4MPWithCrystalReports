@@ -103,8 +103,6 @@ namespace MRP4ME.ViewModel
 
         }
 
-
-
         public DataView BOMItems
         {
             get

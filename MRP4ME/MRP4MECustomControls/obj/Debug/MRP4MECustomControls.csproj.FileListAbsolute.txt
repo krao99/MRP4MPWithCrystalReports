@@ -1,0 +1,11 @@
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\Themes\CoreStyles.Generic.baml
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\Themes\Generic.baml
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\MRP4MECustomControls_MarkupCompile.cache
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\MRP4MECustomControls_MarkupCompile.lref
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\bin\Debug\MRP4MECustomControls.dll
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\bin\Debug\MRP4MECustomControls.pdb
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\Themes\ModalDialogHost.Generic.baml
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\MRP4MECustomControls.g.resources
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\MRP4MECustomControls.dll
+C:\kotesh\MRP4ME\MRP4ME\MRP4MECustomControls\obj\Debug\MRP4MECustomControls.pdb

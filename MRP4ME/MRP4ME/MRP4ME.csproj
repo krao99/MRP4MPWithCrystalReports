@@ -126,6 +126,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -199,6 +200,12 @@
     <Compile Include="UIElementsLib\DecimalToStringConverter.cs" />
     <Compile Include="UIElementsLib\IntToStringConverter.cs" />
     <Compile Include="UIElementsLib\Ivalueconverter.cs" />
+    <Compile Include="UIElementsLib\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UIElementsLib\MsgBox.Designer.cs">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIElementsLib\TabItemBackgroundColourConverter.cs" />
     <Compile Include="ValidationHelpers\SalesOrderHelper.cs" />
     <Compile Include="ViewModel\BOMDashBoardViewModel.cs" />
@@ -257,6 +264,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIElementsLib\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
