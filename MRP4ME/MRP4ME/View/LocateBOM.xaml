@@ -139,7 +139,7 @@
 
                 <Label Content="Item Code: " HorizontalAlignment="Left" Height="30" Width="108" FontWeight="Bold"   />
                 
-                <ComboBox Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="247"
+                <ComboBox Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="247" IsEditable="True"
                 	ItemsSource="{Binding Itemcodes, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" 
                 	SelectedValue="{Binding ItemCode, Mode=TwoWay}"
                     IsSynchronizedWithCurrentItem="True" />
