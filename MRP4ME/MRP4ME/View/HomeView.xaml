@@ -15,20 +15,17 @@
         <Image x:Key="imgReports" Source="/MRP4ME;component/Images/reports.jpg" Stretch="Fill" />
     </UserControl.Resources>
     <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type HeaderedContentControl}}, Path=DataContext}">
-        <Button Width="142" Height="127"  Content="{StaticResource soImage}" Margin="-10,30,506,401" 
+        <Button Width="142" Height="127"  Content="{StaticResource soImage}" Margin="10,197,506,234" 
                 Background="Transparent" BorderBrush="Transparent" Command="{Binding SalesOrderCommand}"/>
 
-        <Button Width="142" Height="127"  Content="{StaticResource imgSpecs}" Margin="415,30,81,401" 
-                Background="Transparent" BorderBrush="Transparent" />
-
-        <Button Width="142" Height="127"  Content="{StaticResource imgBOM}" Margin="-10,197,506,234" 
-                Background="Transparent" BorderBrush="Transparent" Command="{Binding BOMCommand}"/>
+        <Button Width="142" Height="127"  Content="{StaticResource imgBOM}" Margin="170,197,346,234" 
+                Background="Transparent" BorderBrush="Transparent" Command="{Binding NewBOMCommand}"/>
         
-        <Button Width="142" Height="127"  Content="{StaticResource imgInventory}" Margin="202,197,294,234" 
+        <Button Width="142" Height="127"  Content="{StaticResource imgInventory}" Margin="327,197,189,234" 
                 Background="Transparent" BorderBrush="Transparent" />
         
-        <Button Width="142" Height="127"  Content="{StaticResource imgReports}" Margin="415,197,81,234" 
-                Background="Transparent" BorderBrush="Transparent" />
+        <Button Width="142" Height="127"  Content="{StaticResource imgReports}" Margin="487,197,29,234" 
+                Background="Transparent" BorderBrush="Transparent" Command="{Binding BOMDashBoardCommand}"/>
 
         
     </Grid>

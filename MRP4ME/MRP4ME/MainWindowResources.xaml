@@ -249,10 +249,7 @@ This resource dictionary is used by the MainWindow.
                                     </Label.Background>
                                 </Label>
                                 <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type HeaderedContentControl}}, Path=DataContext}">
-                                 <!--   <Button x:Name="btnBOM" Content="Bill of Materials" HorizontalAlignment="Center" 
-                                            Height="24" VerticalAlignment="Top" Width="180" Command="{Binding BOMCommand}"
-                                            Background="#FFE2A023" Margin="2,2,0,0"/>
-                                    -->
+                                 
                                     <Button x:Name="btnNewBOM" Content="Create New BOM" HorizontalAlignment="Center" 
                                             Height="24" VerticalAlignment="Top" Width="180" Command="{Binding NewBOMCommand}"
                                             Background="#FFE2A023" Margin="2,2,0,0"/>
@@ -346,9 +343,9 @@ This resource dictionary is used by the MainWindow.
                                         </LinearGradientBrush>
                                     </Label.Background>
                                 </Label>
-                                <StackPanel>
+                                <StackPanel DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type HeaderedContentControl}}, Path=DataContext}">
                                     <Button x:Name="btnReports" Content="Reports" HorizontalAlignment="Center" 
-                                            Height="24" VerticalAlignment="Top" Width="180" 
+                                            Height="24" VerticalAlignment="Top" Width="180" Command="{Binding BOMDashBoardCommand}"
                                             Background="#FFE2A023" Margin="2,2,0,0"/>
                                 </StackPanel>
                                 <StackPanel.Triggers>

@@ -207,6 +207,7 @@
       <DependentUpon>MsgBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UIElementsLib\TabItemBackgroundColourConverter.cs" />
+    <Compile Include="UIElementsLib\WaitCursor.cs" />
     <Compile Include="ValidationHelpers\SalesOrderHelper.cs" />
     <Compile Include="ViewModel\BOMDashBoardViewModel.cs" />
     <Compile Include="ViewModel\BOMViewModel.cs" />

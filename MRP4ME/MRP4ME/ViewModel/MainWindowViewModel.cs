@@ -23,7 +23,7 @@ namespace MRP4ME.ViewModel
         public ICommand HomeCommand { get; set; }
         public ICommand SalesOrderCommand { get; set; }
         public ICommand EditSOCommand { get; set; }
-        public ICommand BOMCommand { get; set; }
+        public ICommand BOMDashBoardCommand { get; set; }
         public ICommand NewBOMCommand { get; set; }
         public ICommand LocateBOMCommand { get; set; }
         public ICommand PrintBOMCommand { get; set; }
@@ -49,7 +49,7 @@ namespace MRP4ME.ViewModel
 
             #region  BOM commands
 
-            this.BOMCommand = new RelayCommand(param => this.ShowBOMDashBoard());
+            this.BOMDashBoardCommand = new RelayCommand(param => this.ShowBOMDashBoard());
             this.NewBOMCommand = new RelayCommand(param => this.CreateNewBOM());
             this.LocateBOMCommand = new RelayCommand(param => this.ShowLocateBOM());
 
@@ -229,6 +229,8 @@ namespace MRP4ME.ViewModel
             bool BOMWorkspaceExist = false;
             //sales_order newSalesOrder = SalesOrder.CreateSalesOrder();
 
+            
+
             BOMDashBoardViewModel workspace = new BOMDashBoardViewModel();
             if (this.Workspaces.Count > 0)
             {
@@ -236,10 +238,13 @@ namespace MRP4ME.ViewModel
             }
 
             //if this work space is not exist
-            if (!BOMWorkspaceExist)
+            using (new WaitCursor())
             {
-                this.Workspaces.Add(workspace);
-                this.SetActiveWorkspace(workspace);
+                if (!BOMWorkspaceExist)
+                {
+                    this.Workspaces.Add(workspace);
+                    this.SetActiveWorkspace(workspace);
+                }
             }
         }
 
@@ -309,5 +314,26 @@ namespace MRP4ME.ViewModel
             return isValid;
         }
 
+    }
+
+    public class WaitCursor : IDisposable
+    {
+        private Cursor _previousCursor;
+
+        public WaitCursor()
+        {
+            _previousCursor = Mouse.OverrideCursor;
+
+            Mouse.OverrideCursor = Cursors.Wait;
+        }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            Mouse.OverrideCursor = _previousCursor;
+        }
+
+        #endregion
     }
 }

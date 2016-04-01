@@ -16,6 +16,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Collections.Specialized;
 using System.Data.Entity;
+using MRP4ME.UIElementsLib;
 
 
 namespace MRP4ME.ViewModel
@@ -40,7 +41,9 @@ namespace MRP4ME.ViewModel
             {
                 using (var dbContext = new MRP4MEEntities())
                 {
+                    UiServices.Show();
                     _salesorders = new ObservableCollection<sales_order>(dbContext.sales_order.ToList());
+                   
                 }
                 return _salesorders;
             }

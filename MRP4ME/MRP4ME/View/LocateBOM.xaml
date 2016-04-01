@@ -138,15 +138,19 @@
             <StackPanel Grid.Row="2" Orientation="Horizontal">
 
                 <Label Content="Item Code: " HorizontalAlignment="Left" Height="30" Width="108" FontWeight="Bold"   />
-                
+
                 <ComboBox Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="247" IsEditable="True"
                 	ItemsSource="{Binding Itemcodes, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" 
                 	SelectedValue="{Binding ItemCode, Mode=TwoWay}"
                     IsSynchronizedWithCurrentItem="True" />
-                
+
                 <Button Content="Locate BOM"  HorizontalAlignment="Left" Height="30"
                 	VerticalAlignment="Top" Width="109" Background="#FFE2A023" Command="{Binding LocateBOMCommand}" 
                 	FontWeight="Bold"   Margin="10,0,0,0"   />
+
+                <Button x:Name="btnCancelBOM" Content="Cancel"  HorizontalAlignment="Left" Height="30"  Grid.Row="16" Grid.Column="1"
+        	VerticalAlignment="Bottom" Width="100" Background="#FFE2A023" Command="{Binding Path=CloseCommand}" 
+                Margin="10,0,0,2" FontWeight="Bold" RenderTransformOrigin="1.49,0.4"/>
             </StackPanel>
 
             <Grid Grid.Row="3" Margin="0,0,0,30" Background="#FFE2FEE2" >
